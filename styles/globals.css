@@ -35,6 +35,10 @@ span {
   letter-spacing: 1.6px;
 }
 
+p {
+  font-family: "Quicksand", sans-serif;
+}
+
 .container {
   max-width: 1400px;
 }
@@ -46,34 +50,34 @@ button:hover {
 }
 
 /* Items */
-.items > div:nth-child(even) img {
+.items > div:nth-child(even) img, .activities > div:nth-child(even) img {
   order: -1;
   border-top-left-radius: 1rem;
   border-bottom-left-radius: 1rem;
 }
 
-.items > div:nth-child(odd) img {
+.items > div:nth-child(odd) img, .activities > div:nth-child(odd) img {
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
 }
 
-.items > div:last-child img {
+.items > div:last-child img, .activities > div:last-child img {
   border-bottom-left-radius: 1rem;
 }
 
-.items > div:first-child img {
+.items > div:first-child img, .activities > div:first-child img {
   border-top-left-radius: 1rem;
 }
 
-.items > div:nth-child(even) .content {
+.items > div:nth-child(even) .content, .activities > div:nth-child(even) .content {
   padding-left: 4rem;
 }
 
-.items > div:nth-child(odd) .content {
+.items > div:nth-child(odd) .content, .activities > div:nth-child(odd) .content {
   padding-right: 4rem;
 }
 
-.items img {
+.items img, .activities img {
   width: 100%;
   height: 420px;
   object-fit: cover;

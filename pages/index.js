@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 import {
-  Activity,
+  HomeActivity,
   Event,
   Featured,
   GetInvolved,
@@ -32,9 +32,9 @@ export default function Home() {
           </div>
 
           <div className="grow grid grid-cols-3 gap-5">
-            <Activity icon={football} title="Football" />
-            <Activity icon={lifeskills} title="Life Skills" />
-            <Activity icon={computer} title="Computer Training" />
+            <HomeActivity icon={football} title="Football" />
+            <HomeActivity icon={lifeskills} title="Life Skills" />
+            <HomeActivity icon={computer} title="Computer Training" />
           </div>
         </div>
       </section>

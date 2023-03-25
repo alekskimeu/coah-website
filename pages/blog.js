@@ -5,7 +5,7 @@ import image from "../assets/item.png";
 export default function Blog() {
   return (
     <Layout>
-      <section className="pt-[3rem] pb-[5rem]">
+      <section className="pt-[4rem] pb-[5rem]">
 
         <div className="container mx-auto grid grid-cols-2 gap-14">
         <TopPost

@@ -17,7 +17,7 @@ const Post = ({ image, title, content, date, time }) => {
           <span className="text-[.8rem] text-gray-400">{date}</span>
         </h2>
         <h1 className="mb-5 mt-2 font-semibold text-xl">{title}</h1>
-        <p className="text-[#5E5E5E]">{content}</p>
+        <p className="text-gray-600">{content}</p>
         <div className="mt-5 flex justify-between items-center">
           <span className="text-[.9rem] text-gray-400">{time} min read</span>
 

@@ -11,7 +11,7 @@ const Event = ({title, image, content, date, venue }) => {
         <div className="pl-5 pr-5 relative bg-white">
             <h1 className="font-semibold text-xl">{title}</h1>
             <span className="opacity-70 text-sm">{venue}</span>
-            <p className="text-[#5E5E5E] mt-4">{content}</p>
+            <p className="text-gray-600 mt-4">{content}</p>
             <div className="mt-3 flex justify-between items-center">
                 <span className="text-xs opacity-70">{date}</span>
 

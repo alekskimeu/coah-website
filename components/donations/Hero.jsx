@@ -13,11 +13,11 @@ const Hero = () => {
             <br /> we can make a <br />
             difference
           </h1>
-          <h2 className="mb-8 font-semibold text-3xl max-w-3xl">
+          <p className="mb-8 text-xl max-w-3xl">
             The world breaks everyone, and afterwards, many are strong at the
             broken places.
-          </h2>
-          <Link href="#donate" className="rounded-full border-0 pt-[.8rem] pb-[.65rem] px-[1.6rem] bg-white text-gray-700 font-semibold uppercase text-sm">
+          </p>
+          <Link href="#donate" className="rounded-full border-0 pt-[.85rem] pb-[.7rem] px-[1.6rem] bg-white text-gray-700 font-semibold uppercase text-sm">
             Donate Now
           </Link>
         </div>

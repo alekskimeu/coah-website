@@ -6,12 +6,12 @@ import ShareIcon from "@mui/icons-material/Share";
 
 const Newsletter = ({ image, title, content, date, time }) => {
   return (
-    <div className="rounded-xl border shadow-lg">
+    <div className="rounded-xl">
       <Image
         src={image}
         className="w-full h-[300px] object-cover overflow-hidden rounded-t-xl"
       />
-      <div className="mt-10 relative bg-white px-6 pb-4 rounded-b-xl">
+      <div className="mt-10 relativ px-2 pb-4 rounded-b-xl">
         <h2 className="post-title mt-4 text-[#17403f] flex items-center gap-2">
           Football &#xb7;{" "}
           <span className="text-[.8rem] text-gray-400">{date}</span>

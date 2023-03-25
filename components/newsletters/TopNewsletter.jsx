@@ -6,7 +6,7 @@ import ShareIcon from "@mui/icons-material/Share";
 
 const TopNewsletter = ({ image, title, content, date, time }) => {
   return (
-    <div className="rounded-xl border shadow-lg grid grid-cols-2">
+    <div className="rounded-xl border grid grid-cols-2">
       <Image
         src={image}
         className="w-full h-[100%] object-cover overflow-hidden rounded-l-xl"

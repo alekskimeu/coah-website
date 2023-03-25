@@ -32,7 +32,7 @@ export default function Newsletters() {
           <Newsletter
             image={image}
             title="Mathare Clean Up Service"
-            content="This is the second part of the SMM starter pack series of articles. This is the second part of the SMM starter pack series of articles. "
+            // content="This is the second part of the SMM starter pack series of articles. This is the second part of the SMM starter pack series of articles. "
             date="2 days ago"
             time={8}
             height="250px"
@@ -40,7 +40,7 @@ export default function Newsletters() {
           <Newsletter
             image={image}
             title="Mathare Clean Up Service"
-            content="This is the second part of the SMM starter pack series of articles. This is the second part of the SMM starter pack series of articles. "
+            // content="This is the second part of the SMM starter pack series of articles. This is the second part of the SMM starter pack series of articles. "
             date="2 days ago"
             time={8}
             height="250px"
@@ -48,7 +48,7 @@ export default function Newsletters() {
           <Newsletter
             image={image}
             title="Mathare Clean Up Service"
-            content="This is the second part of the SMM starter pack series of articles. This is the second part of the SMM starter pack series of articles. "
+            // content="This is the second part of the SMM starter pack series of articles. This is the second part of the SMM starter pack series of articles. "
             date="2 days ago"
             time={8}
             height="250px"
@@ -56,7 +56,7 @@ export default function Newsletters() {
           <Newsletter
             image={image}
             title="Mathare Clean Up Service"
-            content="This is the second part of the SMM starter pack series of articles. This is the second part of the SMM starter pack series of articles. "
+            // content="This is the second part of the SMM starter pack series of articles. This is the second part of the SMM starter pack series of articles. "
             date="2 days ago"
             time={8}
             height="250px"

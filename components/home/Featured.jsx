@@ -8,9 +8,9 @@ import ShareIcon from '@mui/icons-material/Share';
 import ArrowRightAltOutlinedIcon from "@mui/icons-material/ArrowRightAltOutlined";
 
 const Featured = ({image, title, description}) => {
-  return <div className="grid grid-cols-2 items-center gap-10">
+  return <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-10">
 
-    <Image src={image} className="rounded-xl max-h-[420px] object-cover" />
+    <Image src={image} className="rounded-xl w-full lg:max-h-[420px] object-cover" />
     <div className="">
         <h1 className="text-white font-semibold text-2xl mb-3">{title}</h1>
         <p className="text-white opacity-80 ">{description}</p>

@@ -6,8 +6,8 @@ import image from "../../assets/hero.png";
 const Hero = () => {
   return (
     <div className="bg-[#17403F] py-[6rem]">
-      <div className="container mx-auto flex justify-between items-center gap-5">
-        <div className="flex flex-col gap-2 items-start text-white">
+      <div className="container mx-auto flex flex-col-reverse items-center justify-center lg:flex-row lg:justify-between gap-10">
+        <div className="flex flex-col items-center lg:items-start text-center lg:text-left gap-5 text-white">
           <h1 className="font-bold text-5xl max-w-lg mb-4">
             Together
             <br /> we can make a <br />

@@ -49,7 +49,7 @@ export default function Donate() {
           description="The world breaks everyone, and afterwards, many are strong at the broken places."
         />
 
-        <div className="container mx-auto flex justify-around">
+        <div className="container mx-auto flex flex-col gap-10 md:flex-row justify-around">
           <DonateCard image={mpesa} />
           <DonateCard image={paypal} />
           <DonateCard image={visa} />

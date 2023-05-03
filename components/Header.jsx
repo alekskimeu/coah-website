@@ -20,7 +20,7 @@ const Header = () => {
 
   // const headerHeight = showMobileMenu ? "100vh" : "5rem";
 
-  const navHeight = showMobileMenu ? "h-[calc(100vh-5rem)]" : ""
+  const navHeight = showMobileMenu ? "h-[calc(100vh-5rem)]" : "";
 
   return (
     <header
@@ -43,7 +43,7 @@ const Header = () => {
         </div>
 
         <div
-          className={`bg-[#17403F] ${navHeight} flex flex-col lg:flex-row lg:justify-between items-center gap-3 w-full absolute top-[5rem] lg:top-0 lg:relative left-[${leftPosition}] lg:left-0 z-20`}
+          className={`bg-[#17403F] ${navHeight} flex flex-col lg:flex-row lg:justify-between items-center gap-3 w-full absolute top-[5rem] lg:top-0 lg:relative left-[${leftPosition}] lg:left-0 z-20 transition ease-in duration-1500`}
         >
           <h1 className="hidden lg:block text-white font-bold text-3xl mb-[3rem] lg:mb-0">
             Logo

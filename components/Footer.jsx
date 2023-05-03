@@ -1,8 +1,8 @@
 import Link from "next/link";
 const Footer = () => {
   return (
-    <footer className="h-[5rem] bg-[#17403F] flex items-center py-4">
-      <div className="container mx-auto flex justify-between items-center gap-5 text-white">
+    <footer className="h-[7rem] lg:h-[5rem] bg-[#17403F] flex items-center py-4 px-[2rem]">
+      <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center gap-5 text-white">
         <div className="flex items-center gap-5">
           <Link href="/activities" className="opacity-80">Activities</Link>
           <Link href="/team" className="opacity-80">Team</Link>

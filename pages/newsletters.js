@@ -7,7 +7,7 @@ export default function Newsletters() {
     <Layout>
       <section className="pt-[3rem] pb-[5rem]">
 
-        <div className="container mx-auto grid grid-cols-2 gap-14">
+        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14">
         <TopNewsletter
             image={image}
             title="Mathare Clean Up Service"
@@ -28,7 +28,7 @@ export default function Newsletters() {
       </section>
 
       <section>
-      <div className="container mx-auto grid grid-cols-2 gap-16">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-[8rem] lg:gap-16">
           <Newsletter
             image={image}
             title="Mathare Clean Up Service"

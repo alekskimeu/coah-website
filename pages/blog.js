@@ -7,7 +7,7 @@ export default function Blog() {
     <Layout>
       <section className="pt-[4rem] pb-[5rem]">
 
-        <div className="container mx-auto grid grid-cols-2 gap-14">
+        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14">
         <TopPost
             image={image}
             title="Mathare Clean Up Service"
@@ -28,11 +28,10 @@ export default function Blog() {
       </section>
 
       <section>
-        <div className="container mx-auto grid grid-cols-2 gap-16">
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-[8rem] lg:gap-16">
           <BlogPost
             image={image}
             title="Mathare Clean Up Service"
-            // content="This is the second part of the SMM starter pack series of articles. This is the second part of the SMM starter pack series of articles. "
             date="2 days ago"
             time={8}
             height="250px"
@@ -40,7 +39,6 @@ export default function Blog() {
           <BlogPost
             image={image}
             title="Mathare Clean Up Service"
-            // content="This is the second part of the SMM starter pack series of articles. This is the second part of the SMM starter pack series of articles. "
             date="2 days ago"
             time={8}
             height="250px"
@@ -48,7 +46,6 @@ export default function Blog() {
           <BlogPost
             image={image}
             title="Mathare Clean Up Service"
-            // content="This is the second part of the SMM starter pack series of articles. This is the second part of the SMM starter pack series of articles. "
             date="2 days ago"
             time={8}
             height="250px"
@@ -56,7 +53,6 @@ export default function Blog() {
           <BlogPost
             image={image}
             title="Mathare Clean Up Service"
-            // content="This is the second part of the SMM starter pack series of articles. This is the second part of the SMM starter pack series of articles. "
             date="2 days ago"
             time={8}
             height="250px"

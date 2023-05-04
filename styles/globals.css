@@ -135,3 +135,8 @@ button:hover {
     background-color: rgba(100, 100, 100, 0.8);
   }
 }
+
+/* Player */
+.player-card {
+  background: radial-gradient(#4d4d4d, #0a0a0a);
+}

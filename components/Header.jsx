@@ -20,6 +20,8 @@ const Header = () => {
 
   // const headerHeight = showMobileMenu ? "100vh" : "5rem";
 
+  const display = showMobileMenu ? "flex" : "hidden";
+
   const navHeight = showMobileMenu ? "h-[calc(100vh-5rem)]" : "";
 
   return (
@@ -27,11 +29,11 @@ const Header = () => {
       className={`bg-[#17403F] fixed top-0 w-full h-[5rem] flex items-start lg:items-center z-20 lg:px-[2rem]`}
     >
       <div className="container mx-auto py-[2rem] relative">
-        <h1 className="text-white font-bold text-3xl lg:hidden absolute left-[2rem] top-[1rem]">
+        <h1 className="text-white font-bold text-3xl lg:hidden absolute left-[2rem] top-[1.5rem]">
           Logo
         </h1>
 
-        <div className="text-white absolute right-[2rem] top-[1rem] opacity-70 cursor-pointer lg:hidden">
+        <div className="text-white absolute right-[2rem] top-[1.5rem] opacity-70 cursor-pointer lg:hidden">
           {showMobileMenu ? (
             <CloseOutlinedIcon className="text-4xl" onClick={hideMobileMenu} />
           ) : (
@@ -43,7 +45,7 @@ const Header = () => {
         </div>
 
         <div
-          className={`bg-[#17403F] ${navHeight} flex flex-col lg:flex-row lg:justify-between items-center gap-3 w-full absolute top-[5rem] lg:top-0 lg:relative left-[${leftPosition}] lg:left-0 z-20 transition ease-in duration-1500`}
+          className={`bg-[#17403F] ${navHeight} ${display} lg:flex flex-col lg:flex-row lg:justify-between items-center gap-3 w-full absolute top-[5rem] lg:top-0 lg:relative left-[${leftPosition}] lg:left-0 z-20 transition ease-in duration-1500`}
         >
           <h1 className="hidden lg:block text-white font-bold text-3xl mb-[3rem] lg:mb-0">
             Logo

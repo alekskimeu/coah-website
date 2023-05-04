@@ -12,10 +12,10 @@ const Post = ({ image, title, content, date, time }) => {
         className="w-full h-[300px] object-cover overflow-hidden rounded-t-xl"
       />
       <div className="mt-10 relative px-2 pb-4 rounded-b-xl">
-        <h2 className="post-title mt-4 text-[#17403f] flex items-center gap-2">
+        <h4 className="post mt-4 text-[#17403f] flex items-center gap-2 text-[.7rem]">
           Football &#xb7;{" "}
-          <span className="text-[.8rem] text-gray-400">{date}</span>
-        </h2>
+          <span className="text-[.7rem] text-gray-400">{date}</span>
+        </h4>
         <h1 className="mb-5 mt-2 font-semibold text-xl">{title}</h1>
         <p className="text-gray-600">{content}</p>
         <div className="mt-5 flex justify-between items-center">

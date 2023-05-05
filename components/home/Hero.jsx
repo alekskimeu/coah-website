@@ -28,7 +28,7 @@ const Hero = () => {
           <div className="flex items-center gap-10 mt-3">
             <Link
               href="/donate"
-              className="bg-white rounded-full pt-[.8rem] pb-[.6rem] px-10"
+              className="bg-white text-[#17403f] rounded-full pt-[.8rem] pb-[.6rem] px-10"
             >
               Donate
             </Link>

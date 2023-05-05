@@ -1,3 +1,5 @@
+import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
+
 import {
   DonateCard,
   DonateHero,
@@ -51,7 +53,15 @@ export default function Donate() {
 
         <div className="container mx-auto flex flex-col gap-10 md:flex-row justify-around">
           <DonateCard image={mpesa} />
-          <DonateCard image={paypal} />
+
+          <div className="bg-white rounded-3xl shadow-lg border flex justify-center items-center px-10 py-5 cursor-pointer min-h-[150px]">
+            <PayPalScriptProvider>
+              <PayPalButtons
+                fundingSource="paypal"
+                style={{ layout: "vertical", label: "donate" }}
+              />
+            </PayPalScriptProvider>
+          </div>
           <DonateCard image={visa} />
         </div>
       </section>

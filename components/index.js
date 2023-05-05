@@ -1,6 +1,8 @@
 export { default as Layout } from "./Layout";
 export { default as DonateHero } from "./donations/Hero";
 export { default as DonateCard } from "./donations/Card";
+export { default as PaypalCard } from "./donations/PaypalCard";
+
 export { default as SectionHeader } from "./SectionHeader";
 export { default as Item } from "./donations/Item";
 

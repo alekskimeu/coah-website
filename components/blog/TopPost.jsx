@@ -1,4 +1,5 @@
 import React from "react";
+import Link from 'next/link'
 import Image from "next/image";
 
 import { IconButton } from "@mui/material";
@@ -16,7 +17,8 @@ const TopPost = ({ image, title, content, date, time }) => {
           Football &#xb7;{" "}
           <span className="text-[.7rem] text-gray-400">{date}</span>
         </h4>
-        <h1 className="mb-5 mt-2 font-semibold text-xl">{title}</h1>
+        <h1 className="mb-5 mt-2 font-semibold text-xl">
+          <Link href="/blog/1">{title}</Link></h1>
         <p className="text-gray-600">{content}</p>
         <div className="mt-5 flex justify-between items-center">
           <span className="text-[.9rem] text-gray-400">{time} min read</span>

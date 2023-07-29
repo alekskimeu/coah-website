@@ -9,7 +9,7 @@ const GetInvolved = () => {
         <h1 className="text-white font-bold text-4xl mb-2">Get Involved</h1>
         <p className="text-white opacity-80 max-w-xl mx-auto">The world break everyone, and afterwards, many are strong at the broken places. The world break everyone, and afterwards.</p>
 
-        <Link href="/donate" className="bg-white pt-[.8rem] pb-[.6rem] px-8 mt-4 rounded-full inline-block w-fit mx-auto">
+        <Link href="/donate" className="bg-white py-[.6rem] px-8 mt-4 rounded-full inline-block w-fit mx-auto text-gray-600">
             Donate <ArrowRightAltOutlinedIcon className="opacity-80" />
         </Link>
     </div>

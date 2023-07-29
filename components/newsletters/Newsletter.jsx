@@ -1,4 +1,5 @@
 import React from "react";
+import Link from 'next/link'
 import Image from "next/image";
 
 import { IconButton } from "@mui/material";
@@ -16,7 +17,11 @@ const Newsletter = ({ image, title, content, date, time }) => {
           Football &#xb7;{" "}
           <span className="text-[.8rem] text-gray-400">{date}</span>
         </h2>
-        <h1 className="mb-5 mt-2 font-semibold text-xl">{title}</h1>
+        <h1 className="mb-5 mt-2 font-semibold text-xl">
+          <Link href="/newsletters/1">
+          {title}
+          </Link>
+          </h1>
         <p className="text-[#5E5E5E]">{content}</p>
         <div className="mt-5 flex justify-between items-center">
           <span className="text-[.9rem] text-gray-400">{time} min read</span>

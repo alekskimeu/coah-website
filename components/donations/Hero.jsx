@@ -5,7 +5,7 @@ import image from "../../assets/hero.png";
 
 const Hero = () => {
   return (
-    <div className="bg-[#17403F] py-[6rem]">
+    <div className="bg-[#283891] py-[6rem]">
       <div className="container mx-auto flex flex-col-reverse items-center justify-center lg:flex-row lg:justify-between gap-10">
         <div className="flex flex-col items-center lg:items-start text-center lg:text-left gap-5 text-white">
           <h1 className="font-bold text-5xl max-w-lg mb-4">
@@ -17,7 +17,10 @@ const Hero = () => {
             The world breaks everyone, and afterwards, many are strong at the
             broken places.
           </p>
-          <Link href="#donate" className="rounded-full border-0 pt-[.85rem] pb-[.7rem] px-[1.6rem] bg-white text-gray-700 font-semibold uppercase text-sm">
+          <Link
+            href="#donate"
+            className="rounded-full border-0 pt-[1rem] pb-[.95rem] px-[2rem] fw-bold bg-white text-gray-800 uppercase text-xs"
+          >
             Donate Now
           </Link>
         </div>

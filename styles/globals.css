@@ -12,8 +12,9 @@
 }
 
 :root {
-  --primary: "#17403f";
+  --primary: "#283891";
   --secondary: "#FCA426";
+  --green: #1aa74f;
   --white: "#ffffff";
   --black: "#000000";
 }
@@ -138,4 +139,66 @@ button:hover {
 /* Player */
 .player-card {
   background: radial-gradient(#4d4d4d, #0a0a0a);
+}
+
+/* Featured */
+.featured {
+  position: relative;
+}
+
+.featured::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  height: 90%;
+  max-width: 100%;
+  background-color: red;
+  z-index: -1;
+  border-radius: 2rem;
+  -webkit-border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  -ms-border-radius: 2rem;
+  -o-border-radius: 2rem;
+  transform: rotate(10deg);
+  -webkit-transform: rotate(10deg);
+  -moz-transform: rotate(10deg);
+  -ms-transform: rotate(10deg);
+  -o-transform: rotate(10deg);
+}
+
+.posts-link {
+  display: none;
+}
+
+.home-posts-container {
+  display: grid;
+  grid-template-columns: 1.5fr 2fr;
+  align-items: center;
+  gap: 5rem;
+}
+
+.home-posts {
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  background-color: var(--white);
+}
+
+.home-posts::-webkit-scrollbar {
+  display: none;
+}
+
+@media screen and (max-width: 968px) {
+  .home-posts-container {
+    grid-template-columns: 1fr;
+    gap: 3rem
+  }
+
+  .all-posts-link {
+    display: none;
+  }
+
+  .posts-link {
+    display: block;
+  }
 }

@@ -6,7 +6,7 @@ import ShareIcon from "@mui/icons-material/Share";
 
 const Event = ({ title, image, content, date, venue }) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 mb-5 items-center gap-5 shadow-xl rounded-xl border">
+    <div className="grid grid-cols-1 md:grid-cols-2 mb-5 items-center gap-5 shadow-2xl rounded-xl">
       <Image
         src={image}
         className="rounded-t-xl md:rounded-t-none md:rounded-tl-xl md:rounded-bl-xl w-full h-[100%] object-cover"

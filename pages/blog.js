@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import { Layout, BlogPost, TopPost } from "@/components";
 
 import image from "../assets/item.png";
@@ -5,6 +6,10 @@ import image from "../assets/item.png";
 export default function Blog() {
   return (
     <Layout>
+      <Head>
+        <title>COAH - Blog </title>
+        <meta name="description" content="A community based organization located in Mathare Nairobi, Kenya aiming to eradicate poverty through sport for holistic development." />
+      </Head>
       <section className="pt-[4rem] pb-[5rem]">
 
         <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14">

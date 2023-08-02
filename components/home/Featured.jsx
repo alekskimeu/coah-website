@@ -2,9 +2,6 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { IconButton } from "@mui/material";
-import ShareIcon from "@mui/icons-material/Share";
-
 import ArrowRightAltOutlinedIcon from "@mui/icons-material/ArrowRightAltOutlined";
 
 const Featured = ({ image, title, description }) => {

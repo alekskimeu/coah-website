@@ -19,11 +19,11 @@ import computer from "../assets/computer.png";
 import image from "../assets/item.png";
 import learn from "../assets/learning.png";
 
-export default function Home() {
+export default function About() {
   return (
     <Layout>
       <Head>
-        <title>COAH - Home </title>
+        <title>COAH - About </title>
         <meta name="description" content="A community based organization located in Mathare Nairobi, Kenya aiming to eradicate poverty through sport for holistic development." />
       </Head>
       <HomeHero />

@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&family=Quicksand:wght@400;500;600;700&family=Roboto:wght@300;400;500;700;900&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css");
 
@@ -24,7 +25,7 @@ html {
 }
 
 body {
-  font-family: "Barlow", sans-serif;
+  font-family: "Quicksand", sans-serif;
   scroll-behavior: smooth;
   background-color: #fbfdff;
 }
@@ -41,6 +42,12 @@ button,
 span {
   line-height: 1.6;
   letter-spacing: 1.6px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Roboto", sans-serif;
 }
 
 section {
@@ -182,16 +189,41 @@ button:hover {
   -ms-overflow-style: none;
   scrollbar-width: none;
   background-color: var(--white);
+  padding-bottom: 3rem;
 }
 
+/* Scrollbar width */
 .home-posts::-webkit-scrollbar {
-  display: none;
+  width: 10px;
+  border-radius: 5rem;
+  -webkit-border-radius: 5rem;
+  -moz-border-radius: 5rem;
+  -ms-border-radius: 5rem;
+  -o-border-radius: 5rem;
 }
+
+/* Track */
+.home-posts::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 5rem;
+}
+
+/* Handle */
+.home-posts::-webkit-scrollbar-thumb {
+  background: #283891;
+  border-radius: 5rem;
+}
+
+/* Handle on hover */
+.home-posts::-webkit-scrollbar-thumb:hover {
+  background: #2f41a8;
+}
+
 
 @media screen and (max-width: 968px) {
   .home-posts-container {
     grid-template-columns: 1fr;
-    gap: 3rem
+    gap: 3rem;
   }
 
   .all-posts-link {

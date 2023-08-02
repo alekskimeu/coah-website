@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import {
   DonateCard,
   DonateHero,
@@ -14,6 +15,10 @@ import visa from "../assets/visa.png";
 export default function Donate() {
   return (
     <Layout>
+      <Head>
+        <title>COAH - Donate </title>
+        <meta name="description" content="A community based organization located in Mathare Nairobi, Kenya aiming to eradicate poverty through sport for holistic development." />
+      </Head>
       <DonateHero />
 
       <section className="py-[5rem]">

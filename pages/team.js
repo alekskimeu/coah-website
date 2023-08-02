@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import { Layout, PlayerCard } from "@/components";
 
 import image from "../assets/player.png";
@@ -5,6 +6,10 @@ import image from "../assets/player.png";
 export default function Team() {
   return (
     <Layout>
+       <Head>
+        <title>COAH - Team </title>
+        <meta name="description" content="A community based organization located in Mathare Nairobi, Kenya aiming to eradicate poverty through sport for holistic development." />
+      </Head>
       <section className="pt-[3rem]">
         <div className="container mx-auto">
           <div className="border-b pb-3">

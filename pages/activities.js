@@ -1,3 +1,5 @@
+import Head from 'next/head'
+
 import { Layout, Activity, SectionHeader } from "@/components";
 
 import image from "../assets/item.png";
@@ -5,6 +7,10 @@ import image from "../assets/item.png";
 export default function Activities() {
   return (
     <Layout>
+      <Head>
+        <title>COAH - Activities </title>
+        <meta name="description" content="A community based organization located in Mathare Nairobi, Kenya aiming to eradicate poverty through sport for holistic development." />
+      </Head>
       <section className="pt-[4rem] pb-[5rem]">
         <SectionHeader
             title="What we do"

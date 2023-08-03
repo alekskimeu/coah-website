@@ -1,26 +1,36 @@
 import React from "react";
 import Image from "next/image";
 
+import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
 import { IconButton } from "@mui/material";
 import ShareIcon from "@mui/icons-material/Share";
 
 const Event = ({ title, image, content, date, venue }) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 mb-5 items-center gap-5 shadow-2xl rounded-xl">
+    <div className="group grid grid-cols-1 md:grid-cols-2 mb-5 items-center gap-5 shadow-lg rounded-xl transition duration-150 overflow-hidden hover:shadow-2xl hover:ease-in">
       <Image
+        width="100"
+        height="100"
         src={image}
-        className="rounded-t-xl md:rounded-t-none md:rounded-tl-xl md:rounded-bl-xl w-full h-[100%] object-cover"
+        className="rounded-t-xl md:rounded-t-none md:rounded-tl-xl md:rounded-bl-xl w-full h-[100%] delay-100 group-hover:scale-105 group-hover:grayscale	 transition duration-500"
       />
       <div className="p-5 relative bg-white rounded-b-xl">
-        <h1 className="font-semibold text-xl">{title}</h1>
-        <span className="opacity-70 text-sm">{venue}</span>
-        <p className="text-gray-600 mt-4">{content}</p>
+        <h1 className="font-semibold text-lg text-[#283891]">{title}</h1>
+        <span className="text-sm text-[#61677A] opacity-80">{venue}</span>
+        <p className="text-[#61677A] mt-4 line-clamp-4 text-md">{content}</p>
         <div className="mt-3 flex justify-between items-center">
-          <span className="text-xs opacity-70">{date}</span>
+          <div className="flex items-center gap-2">
+            <CalendarMonthOutlinedIcon
+              style={{ color: "#61677A", opacity: ".5" }}
+            />
+            <span className="text-xs opacity-90 pt-1 text-[#61677A]">
+              {date}
+            </span>
+          </div>
 
-          <IconButton style={{ backgroundColor: "#EAF1FB" }}>
+          {/* <IconButton style={{ backgroundColor: "#EAF1FB" }}>
             <ShareIcon style={{ opacity: ".5" }} />
-          </IconButton>
+          </IconButton> */}
         </div>
       </div>
     </div>

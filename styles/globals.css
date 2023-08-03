@@ -50,6 +50,15 @@ h3 {
   font-family: "Roboto", sans-serif;
 }
 
+.wrapper {
+  position: relative;
+  min-height: 100vh;
+}
+
+.wrap {
+  padding-bottom: 5rem;
+}
+
 section {
   padding-left: 2rem;
   padding-right: 2rem;
@@ -77,6 +86,7 @@ button:hover {
     order: 2;
     border-top-right-radius: 1rem;
     border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 0 !important;
   }
 
   .items > div:last-child img,
@@ -194,7 +204,7 @@ button:hover {
 
 /* Scrollbar width */
 .home-posts::-webkit-scrollbar {
-  width: 10px;
+  width: 0.8rem;
   border-radius: 5rem;
   -webkit-border-radius: 5rem;
   -moz-border-radius: 5rem;
@@ -218,7 +228,6 @@ button:hover {
 .home-posts::-webkit-scrollbar-thumb:hover {
   background: #2f41a8;
 }
-
 
 @media screen and (max-width: 968px) {
   .home-posts-container {

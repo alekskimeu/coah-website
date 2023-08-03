@@ -4,10 +4,14 @@ import Footer from "./Footer";
 
 const Layout = ({ children }) => {
   return (
-    <div>
-      <Header />
-      <div className="pt-[5rem]">{children}</div>
-      <Social />
+    <div className="wrapper">
+      <div className="wrap">
+        <Header />
+        <div className="pt-[5rem]">
+          {children}
+          <Social />
+        </div>
+      </div>
       <Footer />
     </div>
   );

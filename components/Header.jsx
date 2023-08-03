@@ -49,7 +49,7 @@ const Header = () => {
         </div>
 
         <div
-          className={`bg-[#283891] ${navHeight} ${display} lg:flex flex-col lg:flex-row lg:justify-between items-center gap-3 w-full absolute top-[5rem] lg:top-0 lg:relative left-[${leftPosition}] lg:left-0 z-20 transition ease-in duration-1500`}
+          className={`bg-[#283891] md:bg-transparent ${navHeight} ${display} lg:flex flex-col lg:flex-row lg:justify-between items-center gap-3 w-full absolute top-[5rem] lg:top-0 lg:relative left-[${leftPosition}] lg:left-0 z-20 transition ease-in duration-1500`}
         >
           {/* <h1 className="hidden lg:block text-white font-bold text-3xl mb-[3rem] lg:mb-0">
             Logo
@@ -62,9 +62,9 @@ const Header = () => {
             <Link href="/about" className="text-[1rem] opacity-90 active:text-black">
               About
             </Link>
-            <Link href="/team" className="text-[1rem] opacity-90">
+            {/* <Link href="/team" className="text-[1rem] opacity-90">
               Team
-            </Link>
+            </Link> */}
             <Link href="/activities" className="text-[1rem] opacity-90">
               Activities
             </Link>

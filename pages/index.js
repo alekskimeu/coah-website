@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Head from 'next/head'
+import Head from "next/head";
 import ArrowRightAltOutlinedIcon from "@mui/icons-material/ArrowRightAltOutlined";
 
 import {
@@ -16,15 +16,17 @@ import football from "../assets/football.png";
 import lifeskills from "../assets/lifeskills.png";
 import computer from "../assets/computer.png";
 
-import image from "../assets/item.png";
 import learn from "../assets/learning.png";
 
-export default function Home() {
+export default function Home({ posts, events }) {
   return (
     <Layout>
       <Head>
         <title>COAH - Home </title>
-        <meta name="description" content="A community based organization located in Mathare Nairobi, Kenya aiming to eradicate poverty through sport for holistic development." />
+        <meta
+          name="description"
+          content="A community based organization located in Mathare Nairobi, Kenya aiming to eradicate poverty through sport for holistic development."
+        />
       </Head>
       <HomeHero />
       <section className="py-[5rem]">
@@ -63,68 +65,31 @@ export default function Home() {
                 </Link>
               </div>
               <p>
-                Canada is one of the most dynamic and multicultural countries
-                across the globe. Offering free public healthcare and education
-                to all its citizens and permanent residents, it also has an
-                extremely high quality of living and one of the strongest
-                economies in the world.
+                The world breaks everyone and afterward many are strong at the
+                broken places. But those that will not break it kills. It kills
+                the very good and the very gentle and the very brave
+                impartially. If you are none of these you can be sure it will
+                kill you too but there will be no special hurry.
               </p>
 
               <Link
                 href="/blog"
-                className="block mt-3 w-fit rounded-full bg-[#283891] text-white py-3 px-8 all-posts-link"
+                className="block mt-3 w-fit rounded-md bg-[#283891] text-white py-2 px-5 all-posts-link text-sm"
               >
-                All Posts <ArrowRightAltOutlinedIcon className="opacity-75" />
+                All Posts <ArrowRightAltOutlinedIcon className="opacity-70" />
               </Link>
             </div>
 
-            <div className="flex items-center flex-1 gap-10 home-posts py-5">
-              {/* TODO: Scrollable posts */}
-              <HomePost
-                image={image}
-                title="Mathare Clean Up Service"
-                content="This is the second part of the SMM starter pack series of articles."
-              />
-              <HomePost
-                image={image}
-                title="Community Reach Out"
-                content="This is the second part of the SMM starter pack series of articles."
-              />
-              <HomePost
-                image={image}
-                title="Community Reach Out"
-                content="This is the second part of the SMM starter pack series of articles."
-              />
-              <HomePost
-                image={image}
-                title="Community Reach Out"
-                content="This is the second part of the SMM starter pack series of articles."
-              />
-              <HomePost
-                image={image}
-                title="Community Reach Out"
-                content="This is the second part of the SMM starter pack series of articles."
-              />
-              <HomePost
-                image={image}
-                title="Community Reach Out"
-                content="This is the second part of the SMM starter pack series of articles."
-              />
-              <HomePost
-                image={image}
-                title="Community Reach Out"
-                content="This is the second part of the SMM starter pack series of articles."
-              />
-              <HomePost
-                image={image}
-                title="Community Reach Out"
-                content="This is the second part of the SMM starter pack series of articles."
-              />
-              <HomePost
-                image={image}
-                title="Community Reach Out"
-                content="This is the second part of the SMM starter pack series of articles."
-              />
+            <div className="flex flex-1 gap-10 home-posts pb-5">
+              {posts.length > 0 &&
+                posts.map((post) => (
+                  <HomePost
+                    key={post.id}
+                    image={post.coverImage}
+                    title={post.title}
+                    content={post.description}
+                  />
+                ))}
             </div>
           </div>
         </div>
@@ -150,20 +115,19 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14">
-            <Event
-              image={image}
-              title="Norway Cup 2022"
-              venue="Norway"
-              content="This is the second part of the SMM starter pack series of articles."
-              date="20 Oct, 2022"
-            />
-            <Event
-              image={image}
-              title="U14 Tournament"
-              venue="Komarock"
-              content="This is the second part of the SMM starter pack series of articles."
-              date="20 Oct, 2022"
-            />
+            {events.length > 0 &&
+              events
+                .slice(0, 2)
+                .map((event) => (
+                  <Event
+                    key={event.id}
+                    image={event.featuredImage}
+                    title={event.title}
+                    venue={event.venue}
+                    content={event.description}
+                    date={event.date}
+                  />
+                ))}
           </div>
         </div>
       </section>
@@ -176,3 +140,16 @@ export default function Home() {
     </Layout>
   );
 }
+
+export const getStaticProps = async () => {
+  const blogUrl = `${process.env.BASE_URL}/blog`;
+  const eventsUrl = `${process.env.BASE_URL}/events`;
+
+  const response = await fetch(blogUrl);
+  const posts = await response.json();
+
+  const data = await fetch(eventsUrl);
+  const events = await data.json();
+
+  return { props: { posts, events } };
+};

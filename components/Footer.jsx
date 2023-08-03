@@ -1,7 +1,8 @@
 import Link from "next/link";
+
 const Footer = () => {
   return (
-    <footer className="h-[7rem] lg:h-[5rem] bg-[#283891] flex items-center py-4 px-[2rem]">
+    <footer className="h-[7rem] lg:h-[5rem] bg-[#283891] flex items-center py-4 px-[2rem] absolute bottom-0" style={{width: "100%"}}>
       <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center gap-5 text-white">
         <div className="flex items-center gap-5">
           <Link href="/activities" className="opacity-80">

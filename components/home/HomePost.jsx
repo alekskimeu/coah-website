@@ -2,14 +2,18 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+import ReactHtmlParser from "react-html-parser";
+
 import ArrowRightAltOutlinedIcon from "@mui/icons-material/ArrowRightAltOutlined";
 
 const HomePost = ({ image, title, content }) => {
   return (
-    <div className="shadow-lg rounded-xl min-w-[310px]">
+    <div className="group shadow-lg rounded-xl w-[310px] min-w-[310px] transition duration-150 overflow-hidden hover:shadow-xl hover:ease-in">
       <Image
+        height="200"
+        width="100"
         src={image}
-        className="rounded-t-xl w-full h-[200px] object-cover"
+        className="rounded-t-xl w-full h-[200px] object-cover delay-100 group-hover:scale-105 group-hover:grayscale	 transition duration-500"
       />
       <div className="py-5 px-4 relative bg-white rounded-b-xl">
         <Link
@@ -18,7 +22,9 @@ const HomePost = ({ image, title, content }) => {
         >
           {title} <ArrowRightAltOutlinedIcon className="opacity-75" />
         </Link>
-        <p className="text-gray-500 mt-2">{content}</p>
+        <div className="text-gray-500 mt-2 line-clamp-3">
+          {ReactHtmlParser(content)}
+        </div>
       </div>
     </div>
   );

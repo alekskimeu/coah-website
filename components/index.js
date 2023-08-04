@@ -23,4 +23,6 @@ export { default as TopPost } from "./blog/TopPost";
 export { default as Newsletter } from "./newsletters/Newsletter";
 export { default as TopNewsletter } from "./newsletters/TopNewsletter";
 
+export { default as TopEvent } from "./events/TopEvent";
+
 export { default as Activity } from "./activities/Activity";

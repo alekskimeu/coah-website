@@ -3,12 +3,13 @@ import Link from "next/link";
 import Image from "next/image";
 import dayjs from "dayjs";
 
+import ReactHtmlParser from "react-html-parser";
 import { IconButton } from "@mui/material";
 import ShareIcon from "@mui/icons-material/Share";
+import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
 import ArrowRightAltOutlinedIcon from "@mui/icons-material/ArrowRightAltOutlined";
-import ReactHtmlParser from "react-html-parser";
 
-const TopNewsletter = ({ image, title, content, date, time }) => {
+const TopEvent = ({ image, title, content, date, slug, venue }) => {
   return (
     <div className="group rounded-lg border-none shadow-lg grid grid-cols-1 md:grid-cols-2 overflow-hidden">
       <Image
@@ -19,24 +20,19 @@ const TopNewsletter = ({ image, title, content, date, time }) => {
         className="w-full h-full overflow-hidden object-cover rounded-b-none rounded-t-lg lg:rounded-r-none lg:rounded-t-none lg:rounded-l-xl delay-100 group-hover:scale-105 group-hover:grayscale transition duration-500"
       />
       <div className="relative bg-white px-6 pb-4 overflow-hidden h-[100%]">
-        <h1 className="mb-5 mt-2 font-semibold text-md">
           <Link
-            href="/blog/1"
-            className="flex justify-between items-center gap-2 text-[#283891]"
+            href={`/events/${slug}`}
+            className="flex justify-between items-center gap-2 text-[#283891] mt-2 font-semibold text-md mb-1"
           >
             {title} <ArrowRightAltOutlinedIcon className="opacity-75" />
           </Link>
-        </h1>
-        <div className="text-gray-600 line-clamp-4 opacity-80">
-          {ReactHtmlParser(content)}
-        </div>
-        <div className="mt-5 flex justify-between items-center">
-          {/* <span className="text-[.9rem] text-gray-400">{time} min read</span>
-
-          <IconButton style={{ backgroundColor: "#EAF1FB" }}>
-            <ShareIcon style={{ opacity: ".5" }} />
-          </IconButton> */}
-          <span className="text-[.7rem] text-gray-400">
+          <p className="text-xs text-[#61677A] opacity-70 mb-5">{venue}</p>
+        <div className="text-gray-600 line-clamp-4 opacity-80">{content}</div>
+        <div className="mt-7 flex items-center gap-2">
+          <CalendarMonthOutlinedIcon
+            style={{ color: "#61677A", opacity: ".5" }}
+          />
+          <span className="text-xs opacity-90 pt-1 text-[#61677A]">
             {dayjs(date.join("-")).format("DD-MMM-YYYY")}
           </span>
         </div>
@@ -45,4 +41,4 @@ const TopNewsletter = ({ image, title, content, date, time }) => {
   );
 };
 
-export default TopNewsletter;
+export default TopEvent;

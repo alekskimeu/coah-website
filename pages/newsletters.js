@@ -2,7 +2,6 @@ import Head from "next/head";
 import { Layout, Newsletter, TopNewsletter } from "@/components";
 
 export default function Newsletters({ newsletters }) {
-  console.log(newsletters)
   return (
     <Layout>
       <Head>

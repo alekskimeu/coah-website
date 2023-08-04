@@ -8,23 +8,26 @@ const Social = () => {
   return (
     <section className="py-[5rem] lg:py-[7rem] flex justify-center items-center">
       <div className="container mx-auto flex flex-col md:flex-row justify-center items-center gap-5">
-        <p>Find us online</p>
-        <div className="flex justify-center items-center gap-4">
-          <a href="">
+        <p className="text-gray-600">Find us online</p>
+        <div className="flex justify-center items-center gap-8">
+          <a
+            href="https://www.facebook.com/coloursofartsandheartfootballacademy/"
+            target="_blank"
+          >
             <IconButton style={{ backgroundColor: "#EAF1FB" }}>
               <FacebookIcon style={{ fontSize: "2rem", opacity: ".7" }} />
             </IconButton>
           </a>
-          <a href="">
+          <a href="" target="_blank">
             <IconButton style={{ backgroundColor: "#EAF1FB" }}>
               <InstagramIcon style={{ fontSize: "2rem", opacity: ".7" }} />
             </IconButton>
           </a>
-          <a href="">
+          {/* <a href="">
             <IconButton style={{ backgroundColor: "#EAF1FB" }}>
               <TwitterIcon style={{ fontSize: "2rem", opacity: ".7" }} />
             </IconButton>
-          </a>
+          </a> */}
         </div>
       </div>
     </section>

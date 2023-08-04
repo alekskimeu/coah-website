@@ -87,6 +87,7 @@ export default function Home({ posts, events }) {
                     key={post.id}
                     image={post.coverImage}
                     title={post.title}
+                    slug={post.slug}
                     content={post.description}
                   />
                 ))}
@@ -123,6 +124,7 @@ export default function Home({ posts, events }) {
                     key={event.id}
                     image={event.featuredImage}
                     title={event.title}
+                    slug={event.slug}
                     venue={event.venue}
                     content={event.description}
                     date={event.date}

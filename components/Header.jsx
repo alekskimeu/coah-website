@@ -74,6 +74,9 @@ const Header = () => {
             <Link href="/newsletters" className="text-[1rem] opacity-90">
               Newsletters
             </Link>
+            <Link href="/events" className="text-[1rem] opacity-90">
+              Events
+            </Link>
           </div>
 
           <Link

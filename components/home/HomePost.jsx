@@ -6,7 +6,7 @@ import ReactHtmlParser from "react-html-parser";
 
 import ArrowRightAltOutlinedIcon from "@mui/icons-material/ArrowRightAltOutlined";
 
-const HomePost = ({ image, title, content }) => {
+const HomePost = ({ image, title, content, slug }) => {
   return (
     <div className="group shadow-lg rounded-xl w-[310px] min-w-[310px] transition duration-150 overflow-hidden hover:shadow-xl hover:ease-in">
       <Image
@@ -17,7 +17,7 @@ const HomePost = ({ image, title, content }) => {
       />
       <div className="py-5 px-4 relative bg-white rounded-b-xl">
         <Link
-          href={`/blog/1`}
+          href={`/blog/${slug}`}
           className="mt-0 font-semibold text-[#283891] flex justify-between items-center gap-2"
         >
           {title} <ArrowRightAltOutlinedIcon className="opacity-75" />

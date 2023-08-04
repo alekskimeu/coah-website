@@ -36,7 +36,7 @@ const TopPost = ({ image, title, content, date, time }) => {
           <IconButton style={{ backgroundColor: "#EAF1FB" }}>
             <ShareIcon style={{ opacity: ".5" }} />
           </IconButton> */}
-          <span className="text-[.7rem] text-gray-400">{date}</span>
+          <span className="text-[.7rem] text-gray-400">{date.join("-")}</span>
         </div>
       </div>
     </div>

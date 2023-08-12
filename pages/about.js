@@ -1,23 +1,6 @@
-import Link from "next/link";
 import Head from "next/head";
-import ArrowRightAltOutlinedIcon from "@mui/icons-material/ArrowRightAltOutlined";
 
-import {
-  HomeActivity,
-  Event,
-  Featured,
-  GetInvolved,
-  HomeHero,
-  Layout,
-  HomePost,
-} from "@/components";
-
-import football from "../assets/football.png";
-import lifeskills from "../assets/lifeskills.png";
-import computer from "../assets/computer.png";
-
-import image from "../assets/item.png";
-import learn from "../assets/learning.png";
+import { GetInvolved, Layout, MissionVision, CoreValues } from "@/components";
 
 export default function About() {
   return (
@@ -29,22 +12,20 @@ export default function About() {
           content="A community based organization located in Mathare Nairobi, Kenya aiming to eradicate poverty through sport for holistic development."
         />
       </Head>
-      {/* <AboutHero /> */}
-      <section className="py-[5rem]">
-        <div className="container mx-auto bg-[#283891] rounded-2xl py-[5rem] px-[3rem] flex flex-col gap-15 lg:gap-10">
+
+      <section className="pt-[2rem]">
+        <div className="container mx-auto py-[5rem] flex gap-[8rem] mission-container">
           <div className="max-w-sm flex-none mb-10 lg:mb-0">
-            <h1 className="text-white text-xl font-semibold mb-2">
-              Who we are
-            </h1>
-            <p className="text-white opacity-80">
-              The world breaks everyone, and afterwards, many are strong at the
-              broken places.
+            <h1 className="text-xl font-semibold mb-2 uppercase">Who we are</h1>
+            <p className="opacity-80">
+              We are a community based organization located in Mathare Nairobi, Kenya aiming to eradicate poverty through sport for holistic development.
             </p>
           </div>
-
-          
+          <MissionVision />
         </div>
       </section>
+
+      <CoreValues />
 
       <section className="bg-[#283891] py-[7rem]">
         <div className="container mx-auto">

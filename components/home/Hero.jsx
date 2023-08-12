@@ -34,7 +34,7 @@ const Hero = () => {
               Donate
             </Link>
             <Link
-              href="/"
+              href="/about"
               className="flex items-center gap-1 text-white opacity-90"
             >
               Learn more

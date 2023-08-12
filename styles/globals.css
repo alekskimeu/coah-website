@@ -89,8 +89,8 @@ button:hover {
     border-bottom-left-radius: 0 !important;
   }
 
-  .items > div:last-child img,
-  .activities > div:last-child img {
+  .items > div >figure:last-child img,
+  .activities > div >figure:last-child img {
     border-bottom-left-radius: 1rem;
   }
 
@@ -140,7 +140,7 @@ button:hover {
 }
 
 @media screen and (min-width: 1018px) {
-  .home-activities .activity:not(:last-child)::after {
+  .home-activities .activity:not( >figure:last-child)::after {
     position: absolute;
     content: "";
     right: -1.2rem;
@@ -241,5 +241,49 @@ button:hover {
 
   .posts-link {
     display: block;
+  }
+}
+
+.mission-vision {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5rem;
+}
+
+.mission-vision >figure:last-child {
+  margin-top: 7rem;
+}
+
+.core-values {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+}
+
+@media screen and (max-width: 1300px) {
+  .mission-container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .core-values {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .core-values {
+    grid-template-columns: 1fr;
+    gap: 5rem;
+  }
+  
+  .mission-vision {
+    grid-template-columns: 1fr;
+  }
+
+  .mission-vision >figure:last-child {
+    margin-top: 0;
   }
 }

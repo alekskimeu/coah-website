@@ -20,13 +20,13 @@ const TopEvent = ({ image, title, content, date, slug, venue }) => {
         className="w-full h-full overflow-hidden object-cover rounded-b-none rounded-t-lg lg:rounded-r-none lg:rounded-t-none lg:rounded-l-xl delay-100 group-hover:scale-105 group-hover:grayscale transition duration-500"
       />
       <div className="relative bg-white px-6 pb-4 overflow-hidden h-[100%]">
-          <Link
-            href={`/events/${slug}`}
-            className="flex justify-between items-center gap-2 text-[#283891] mt-2 font-semibold text-md mb-1"
-          >
-            {title} <ArrowRightAltOutlinedIcon className="opacity-75" />
-          </Link>
-          <p className="text-xs text-[#61677A] opacity-70 mb-5">{venue}</p>
+        <Link
+          href={`/events/${slug}`}
+          className="flex justify-between items-center gap-2 text-[#283891] mt-2 font-semibold text-md mb-1"
+        >
+          {title} <ArrowRightAltOutlinedIcon className="opacity-75" />
+        </Link>
+        <p className="text-xs text-[#61677A] opacity-70 mb-5">{venue}</p>
         <div className="text-gray-600 line-clamp-4 opacity-80">{content}</div>
         <div className="mt-7 flex items-center gap-2">
           <CalendarMonthOutlinedIcon

@@ -6,7 +6,7 @@ import ShareIcon from "@mui/icons-material/Share";
 
 import { Layout } from "@/components";
 
-export default function Post({ post }) {
+export default function Post() {
   return (
     <Layout>
       <section className="pt-[3rem] pb-[5rem]">
@@ -43,25 +43,25 @@ export default function Post({ post }) {
   );
 }
 
-export const getStaticPaths = async () => {
-  const url = `${process.env.BASE_URL}/blog`;
+// export const getStaticPaths = async () => {
+//   const url = `${process.env.BASE_URL}/blog`;
 
-  const response = await fetch(url);
-  const posts = await response.json();
+//   const response = await fetch(url);
+//   const posts = await response.json();
 
-  const slugs = posts.map((post) => post.slug);
+//   const slugs = posts.map((post) => post.slug);
 
-  const paths = slugs.map((slug) => ({
-    params: { slug: slug.toString() },
-  }));
+//   const paths = slugs.map((slug) => ({
+//     params: { slug: slug.toString() },
+//   }));
 
-  return { paths, fallback: false };
-};
+//   return { paths, fallback: false };
+// };
 
-export const getStaticProps = async (context) => {
-  const url = `${process.env.BASE_URL}/blog/${context.params.slug}`;
+// export const getStaticProps = async (context) => {
+//   const url = `${process.env.BASE_URL}/blog/${context.params.slug}`;
 
-  const response = await fetch(url);
-  const post = await response.json();
-  return { props: { post } };
-};
+//   const response = await fetch(url);
+//   const post = await response.json();
+//   return { props: { post } };
+// };

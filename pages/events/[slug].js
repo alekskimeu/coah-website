@@ -5,8 +5,7 @@ import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined
 
 import { Layout } from "@/components";
 
-
-export default function Event({ event }) {
+export default function Event() {
   return (
     <Layout>
       <section className="pt-[3rem] pb-[5rem]">
@@ -21,15 +20,20 @@ export default function Event({ event }) {
 
           <div className="flex justify-between items-center">
             <div>
-              <h1 className="font-semibold text-lg text-[#283891]">{event.title}</h1>
+              <h1 className="font-semibold text-lg text-[#283891]">
+                {event.title}
+              </h1>
               <span className="text-gray-500 text-sm">{event.venue}</span>
             </div>
             <div className="flex items-center gap-2">
-          <CalendarMonthOutlinedIcon
-            style={{ color: "#61677A", opacity: ".5" }}
-          />
-          <span className="text-xs opacity-90 pt-1 text-[#61677A]">{event.date}</span>
-        </div>           </div>
+              <CalendarMonthOutlinedIcon
+                style={{ color: "#61677A", opacity: ".5" }}
+              />
+              <span className="text-xs opacity-90 pt-1 text-[#61677A]">
+                {event.date}
+              </span>
+            </div>{" "}
+          </div>
 
           <div className="mt-4">
             <p className="text-gray-700">{event.description}</p>
@@ -46,25 +50,25 @@ export default function Event({ event }) {
   );
 }
 
-export const getStaticProps = async (context) => {
-  const url = `${process.env.BASE_URL}/events/${context.params.slug}`;
+// export const getStaticProps = async (context) => {
+//   const url = `${process.env.BASE_URL}/events/${context.params.slug}`;
 
-  const response = await fetch(url);
-  const event = await response.json();
-  return { props: { event } };
-};
+//   const response = await fetch(url);
+//   const event = await response.json();
+//   return { props: { event } };
+// };
 
-export const getStaticPaths = async () => {
-  const url = `${process.env.BASE_URL}/events`;
+// export const getStaticPaths = async () => {
+//   const url = `${process.env.BASE_URL}/events`;
 
-  const response = await fetch(url);
-  const events = await response.json();
+//   const response = await fetch(url);
+//   const events = await response.json();
 
-  const slugs = events.map((event) => event.slug);
+//   const slugs = events.map((event) => event.slug);
 
-  const paths = slugs.map((slug) => ({
-    params: { slug: slug.toString() },
-  }));
+//   const paths = slugs.map((slug) => ({
+//     params: { slug: slug.toString() },
+//   }));
 
-  return { paths, fallback: false };
-};
+//   return { paths, fallback: false };
+// };

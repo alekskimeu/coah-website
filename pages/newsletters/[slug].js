@@ -8,7 +8,7 @@ import { Layout } from "@/components";
 
 import image from "../../assets/item.png";
 
-export default function Newsletter() {
+export default function Newsletter({ newsletter }) {
   return (
     <Layout>
       <section className="pt-[3rem] pb-[5rem]">
@@ -20,9 +20,7 @@ export default function Newsletter() {
 
           <div className="flex justify-between items-center">
             <div>
-              <h1 className="font-semibold text-lg text-[#283891]">
-                {newsletter.title}
-              </h1>
+              <h1 className="font-semibold text-lg text-[#283891]">{newsletter.title}</h1>
               {/* <span className="text-gray-500">8 min read</span> */}
             </div>
             <span className="text-gray-400">{newsletter.createdAt}</span>
@@ -45,25 +43,25 @@ export default function Newsletter() {
   );
 }
 
-// export const getStaticProps = async (context) => {
-//   const url = `${process.env.BASE_URL}/newsletters/${context.params.slug}`;
+export const getStaticProps = async (context) => {
+  const url = `${process.env.BASE_URL}/newsletters/${context.params.slug}`;
 
-//   const response = await fetch(url);
-//   const newsletter = await response.json();
-//   return { props: { newsletter } };
-// };
+  const response = await fetch(url);
+  const newsletter = await response.json();
+  return { props: { newsletter } };
+};
 
-// export const getStaticPaths = async () => {
-//   const url = `${process.env.BASE_URL}/newsletters`;
+export const getStaticPaths = async () => {
+  const url = `${process.env.BASE_URL}/newsletters`;
 
-//   const response = await fetch(url);
-//   const newsletters = await response.json();
+  const response = await fetch(url);
+  const newsletters = await response.json();
 
-//   const slugs = newsletters.map((newsletter) => newsletter.slug);
+  const slugs = newsletters.map((newsletter) => newsletter.slug);
 
-//   const paths = slugs.map((slug) => ({
-//     params: { slug: slug.toString() },
-//   }));
+  const paths = slugs.map((slug) => ({
+    params: { slug: slug.toString() },
+  }));
 
-//   return { paths, fallback: false };
-// };
+  return { paths, fallback: false };
+};

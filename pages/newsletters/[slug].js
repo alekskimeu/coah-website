@@ -59,7 +59,8 @@ export const getStaticPaths = async () => {
   const response = await fetch(url);
   const newsletters = await response.json();
 
-  const slugs = newsletters?.map((newsletter) => newsletter?.slug);
+  const slugs =
+    newsletters && newsletters?.map((newsletter) => newsletter?.slug);
 
   const paths = slugs?.map((slug) => ({
     params: { slug: slug?.toString() },

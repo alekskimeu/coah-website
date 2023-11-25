@@ -10,6 +10,7 @@ import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined
 import ArrowRightAltOutlinedIcon from "@mui/icons-material/ArrowRightAltOutlined";
 
 const TopEvent = ({ image, title, content, date, slug, venue }) => {
+
   return (
     <div className="group rounded-lg border-none shadow-lg grid grid-cols-1 md:grid-cols-2 overflow-hidden">
       <Image
@@ -33,7 +34,7 @@ const TopEvent = ({ image, title, content, date, slug, venue }) => {
             style={{ color: "#61677A", opacity: ".5" }}
           />
           <span className="text-xs opacity-90 pt-1 text-[#61677A]">
-            {dayjs(date.join("-")).format("DD-MMM-YYYY")}
+          {dayjs(date).format("DD-MMM-YYYY")}
           </span>
         </div>
       </div>

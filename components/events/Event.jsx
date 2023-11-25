@@ -21,19 +21,19 @@ const Event = ({ image, title, content, date, time }) => {
           Football &#xb7;{" "}
           <span className="text-[.8rem] text-gray-400">{date}</span>
         </h2> */}
-          <Link
-            href="/newsletters/1"
-            className="flex justify-between items-center gap-2 mb-5 mt-2 font-semibold text-md text-[#283891]"
-          >
-            {title} <ArrowRightAltOutlinedIcon className="opacity-75" />
-          </Link>
+        <Link
+          href="/newsletters/1"
+          className="flex justify-between items-center gap-2 mb-5 mt-2 font-semibold text-md text-[#283891]"
+        >
+          {title} <ArrowRightAltOutlinedIcon className="opacity-75" />
+        </Link>
         <p className="text-xs text-[#61677A] opacity-70">{venue}</p>
 
         <div className="line-clamp-3 text-gray-600 opacity-80">{content}</div>
         <div className="mt-5 flex justify-between items-center">
           <span className="text-[.8rem] text-gray-400">
             {" "}
-            {dayjs(date.join("-")).format("DD-MMM-YYYY")}
+            {dayjs(date).format("DD-MMM-YYYY")}
           </span>
           {/* <span className="text-[.9rem] text-gray-400">{time} min read</span>
 

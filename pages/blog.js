@@ -55,7 +55,8 @@ export default function Blog({ posts }) {
 }
 
 export const getStaticProps = async () => {
-  const url = `${process.env.BASE_URL}/blog`;
+  // const url = `${process.env.BASE_URL}/blog`;
+  const url = `http://localhost:8080/api/v1/posts`;
 
   const response = await fetch(url);
   const posts = await response.json();

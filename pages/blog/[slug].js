@@ -44,7 +44,7 @@ export default function Post({ post }) {
 }
 
 export const getStaticProps = async (context) => {
-  const url = `${process.env.BASE_URL}/blog/${context.params.slug}`;
+  const url = `${process.env.BASE_URL}/posts/${context.params.slug}`;
 
   const response = await fetch(url);
   const post = await response.json();
@@ -52,7 +52,7 @@ export const getStaticProps = async (context) => {
 };
 
 export const getStaticPaths = async () => {
-  const url = `${process.env.BASE_URL}/blog`;
+  const url = `${process.env.BASE_URL}/posts`;
 
   const response = await fetch(url);
   const posts = await response.json();

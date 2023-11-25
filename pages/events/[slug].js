@@ -64,10 +64,10 @@ export const getStaticPaths = async () => {
   const response = await fetch(url);
   const events = await response.json();
 
-  const slugs = events?.map((event) => event?.slug);
+  const slugs = events?.map((event) => event.slug);
 
   const paths = slugs?.map((slug) => ({
-    params: { slug: slug?.toString() },
+    params: { slug: slug.toString() },
   }));
 
   return { paths, fallback: false };

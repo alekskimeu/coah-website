@@ -32,7 +32,7 @@ const Event = ({ title, image, content, date, venue, slug }) => {
               style={{ color: "#61677A", opacity: ".5" }}
             />
             <span className="text-xs opacity-90 pt-1 text-[#61677A]">
-              {dayjs(date.join("-")).format("DD-MMM-YYYY")}
+              {dayjs(date).format("DD-MMM-YYYY")}
             </span>
           </div>
 

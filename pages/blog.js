@@ -1,7 +1,6 @@
 import Head from "next/head";
-import { Layout, BlogPost, TopPost } from "@/components";
-
-import image from "../assets/item.png";
+import { Layout, BlogPost, TopPost, NoData } from "../components";
+import { getSortedPostsData } from "../util/posts";
 
 export default function Blog({ posts }) {
   return (
@@ -14,22 +13,24 @@ export default function Blog({ posts }) {
         />
       </Head>
       <section className="pt-[4rem] pb-[5rem]">
-        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14">
-          {posts.length > 0 &&
-            posts
-              ?.slice(0, 2)
-              .map((post) => (
-                <TopPost
-                  key={post.id}
-                  image={post.coverImage}
-                  title={post.title}
-                  content={post.description}
-                  date={post.createdAt}
-                  time={8}
-                  height="250px"
-                />
-              ))}
-        </div>
+          {posts.length > 0 ?
+            <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14">
+                {posts
+                  ?.slice(0, 2)
+                  .map((post) => (
+                    <TopPost
+                      key={post.id}
+                      image={post.coverImage}
+                      title={post.title}
+                      content={post.description}
+                      date={post.createdAt}
+                      time={8}
+                      height="250px"
+                    />
+                  ))}
+            </div>
+            : <NoData />
+          }
       </section>
 
       <section>
@@ -54,11 +55,19 @@ export default function Blog({ posts }) {
   );
 }
 
-export const getStaticProps = async () => {
-  // const url = `${process.env.BASE_URL}/blog`;
-  const url = `http://localhost:8080/api/v1/posts`;
+// export const getStaticProps = async () => {
+//   const url = `${process.env.BASE_URL}/posts`;
 
-  const response = await fetch(url);
-  const posts = await response.json();
-  return { props: { posts } };
-};
+//   const response = await fetch(url);
+//   const posts = await response.json();
+//   return { props: { posts } };
+// };
+
+// Fetch posts from file system
+export async function getStaticProps() {
+  const posts = getSortedPostsData();
+
+  return {
+    props: { posts },
+  };
+}

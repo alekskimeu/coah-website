@@ -12,7 +12,7 @@ import ArrowRightAltOutlinedIcon from "@mui/icons-material/ArrowRightAltOutlined
 const TopEvent = ({ image, title, content, date, slug, venue }) => {
 
   return (
-    <div className="group rounded-lg border-none shadow-lg grid grid-cols-1 md:grid-cols-2 overflow-hidden">
+    <div className="group rounded-lg border-none shadow-lg grid grid-cols-1 md:grid-cols-2 items-center overflow-hidden">
       <Image
         alt={title}
         width="100"

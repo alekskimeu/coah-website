@@ -56,25 +56,28 @@ const Header = () => {
           </h1> */}
           <Image src={logo} className="w-24 bg-white rounded-sm" />
           <div className="flex flex-col mt-[4rem] lg:mt-0 lg:flex-row text-center lg:text-left gap-[2rem] lg:gap-[3rem] text-white">
-            <Link href="/" className="text-[.95rem] opacity-80 active:text-black">
+            <Link href="/" className="text-[1rem] opacity-80 active:text-black">
               Home
             </Link>
-            <Link href="/about" className="text-[.95rem] opacity-80 active:text-black">
+            <Link
+              href="/about"
+              className="text-[1rem] opacity-80 active:text-black"
+            >
               About
             </Link>
-            {/* <Link href="/team" className="text-[.95rem] opacity-80">
+            {/* <Link href="/team" className="text-[1rem] opacity-80">
               Team
             </Link> */}
-            <Link href="/activities" className="text-[.95rem] opacity-80">
+            <Link href="/activities" className="text-[1rem] opacity-80">
               Activities
             </Link>
-            <Link href="/blog" className="text-[.95rem] opacity-80">
+            <Link href="/blog" className="text-[1rem] opacity-80">
               Blog
             </Link>
-            <Link href="/newsletters" className="text-[.95rem] opacity-80">
+            <Link href="/newsletters" className="text-[1rem] opacity-80">
               Newsletters
             </Link>
-            <Link href="/events" className="text-[.95rem] opacity-80">
+            <Link href="/events" className="text-[1rem] opacity-80">
               Events
             </Link>
           </div>

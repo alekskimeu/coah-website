@@ -3,7 +3,9 @@ import { IconButton } from "@mui/material";
 import ShareIcon from "@mui/icons-material/Share";
 import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
 
-import { Layout } from "@/components";
+import { Layout } from "../../components";
+
+import {getSingleEvent, getAllEventsSlugs} from '../../util/events'
 
 export default function Event({ event }) {
   return (
@@ -50,25 +52,49 @@ export default function Event({ event }) {
   );
 }
 
-export const getStaticProps = async (context) => {
-  const url = `${process.env.BASE_URL}/events/${context.params.slug}`;
+// export const getStaticProps = async (context) => {
+//   const url = `${process.env.BASE_URL}/events/${context.params.slug}`;
 
-  const response = await fetch(url);
-  const event = await response.json();
-  return { props: { event } };
-};
+//   const response = await fetch(url);
+//   const event = await response.json();
+//   return { props: { event } };
+// };
 
-export const getStaticPaths = async () => {
-  const url = `${process.env.BASE_URL}/events`;
+// export const getStaticPaths = async () => {
+//   const url = `${process.env.BASE_URL}/events`;
 
-  const response = await fetch(url);
-  const events = await response.json();
+//   const response = await fetch(url);
+//   const events = await response.json();
 
-  const slugs = events?.map((event) => event.slug);
+//   const slugs = events?.map((event) => event.slug);
 
-  const paths = slugs?.map((slug) => ({
-    params: { slug: slug.toString() },
-  }));
+//   const paths = slugs?.map((slug) => ({
+//     params: { slug: slug.toString() },
+//   }));
 
-  return { paths, fallback: false };
-};
+//   return { paths, fallback: false };
+// };
+
+export async function getStaticPaths() {
+
+  // Return a list of possible values for slug
+  const paths = getAllEventsSlugs();
+
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
+// Fetch event from file system
+export async function getStaticProps({ params }) {
+
+  // Fetch particular post given slug in params
+  const event = await getSingleEvent(params.slug);
+
+  return {
+    props: {
+      event
+    },
+  };
+}

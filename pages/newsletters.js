@@ -1,5 +1,6 @@
 import Head from "next/head";
-import { Layout, Newsletter, TopNewsletter } from "@/components";
+import { Layout, Newsletter, TopNewsletter, NoData } from "../components";
+import { getSortedNewslettersData } from "@/util/newsletters";
 
 export default function Newsletters({ newsletters }) {
   return (
@@ -12,9 +13,9 @@ export default function Newsletters({ newsletters }) {
         />
       </Head>
       <section className="pt-[4rem] pb-[5rem]">
+          {newsletters.length > 1 ?
         <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14">
-          {newsletters.length > 1 &&
-            newsletters
+            {newsletters
               .slice(0, 2)
               .map((newsletter) => (
                 <TopNewsletter
@@ -28,6 +29,9 @@ export default function Newsletters({ newsletters }) {
                 />
               ))}
         </div>
+        : 
+        <NoData />
+      }
       </section>
 
       <section>
@@ -50,10 +54,20 @@ export default function Newsletters({ newsletters }) {
   );
 }
 
-export const getStaticProps = async () => {
-  const url = `${process.env.BASE_URL}/newsletters`;
+// export const getStaticProps = async () => {
+//   const url = `${process.env.BASE_URL}/newsletters`;
 
-  const response = await fetch(url);
-  const newsletters = await response.json();
-  return { props: { newsletters } };
-};
+//   const response = await fetch(url);
+//   const newsletters = await response.json();
+//   return { props: { newsletters } };
+// };
+
+
+// Fetch posts from file system
+export async function getStaticProps() {
+  const newsletters = getSortedNewslettersData();
+
+  return {
+    props: { newsletters },
+  };
+}

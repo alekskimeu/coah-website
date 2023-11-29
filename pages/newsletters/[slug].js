@@ -4,9 +4,12 @@ import ReactHtmlParser from "react-html-parser";
 import { IconButton } from "@mui/material";
 import ShareIcon from "@mui/icons-material/Share";
 
-import { Layout } from "@/components";
+import { Layout } from "../../components";
 
 import image from "../../assets/item.png";
+
+import { getSingleNewsletter, getAllNewslettersSlugs} from '../../util/posts'
+
 
 export default function Newsletter({ newsletter }) {
   return (
@@ -45,26 +48,51 @@ export default function Newsletter({ newsletter }) {
   );
 }
 
-export const getStaticProps = async (context) => {
-  const url = `${process.env.BASE_URL}/newsletters/${context.params.slug}`;
+// export const getStaticProps = async (context) => {
+//   const url = `${process.env.BASE_URL}/newsletters/${context.params.slug}`;
 
-  const response = await fetch(url);
-  const newsletter = await response.json();
-  return { props: { newsletter } };
-};
+//   const response = await fetch(url);
+//   const newsletter = await response.json();
+//   return { props: { newsletter } };
+// };
 
-export const getStaticPaths = async () => {
-  const url = `${process.env.BASE_URL}/newsletters`;
+// export const getStaticPaths = async () => {
+//   const url = `${process.env.BASE_URL}/newsletters`;
 
-  const response = await fetch(url);
-  const newsletters = await response.json();
+//   const response = await fetch(url);
+//   const newsletters = await response.json();
 
-  const slugs =
-    newsletters && newsletters?.map((newsletter) => newsletter?.slug);
+//   const slugs =
+//     newsletters && newsletters?.map((newsletter) => newsletter?.slug);
 
-  const paths = slugs?.map((slug) => ({
-    params: { slug: slug?.toString() },
-  }));
+//   const paths = slugs?.map((slug) => ({
+//     params: { slug: slug?.toString() },
+//   }));
 
-  return { paths, fallback: false };
-};
+//   return { paths, fallback: false };
+// };
+
+
+export async function getStaticPaths() {
+
+  // Return a list of possible values for slug
+  const paths = getAllNewslettersSlugs();
+
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
+// Fetch newsletter from file system
+export async function getStaticProps({ params }) {
+
+  // Fetch particular post given slug in params
+  const newsletter = await getSingleNewsletter(params.slug);
+
+  return {
+    props: {
+      newsletter
+    },
+  };
+}

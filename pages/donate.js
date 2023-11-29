@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import Head from "next/head";
 import {
   DonateCard,
   DonateHero,
@@ -6,7 +6,7 @@ import {
   Layout,
   SectionHeader,
   PaypalCard,
-} from "@/components";
+} from "../components";
 
 import image from "../assets/item.png";
 import mpesa from "../assets/mpesa.png";
@@ -17,7 +17,10 @@ export default function Donate() {
     <Layout>
       <Head>
         <title>COAH - Donate </title>
-        <meta name="description" content="A community based organization located in Mathare Nairobi, Kenya aiming to eradicate poverty through sport for holistic development." />
+        <meta
+          name="description"
+          content="A community based organization located in Mathare Nairobi, Kenya aiming to eradicate poverty through sport for holistic development."
+        />
       </Head>
       <DonateHero />
 

@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&family=Quicksand:wght@400;500;600;700&family=Roboto:wght@300;400;500;700;900&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css");
 
 * {
@@ -286,4 +285,15 @@ button:hover {
   .mission-vision > figure:last-child {
     margin-top: 0;
   }
+}
+
+/* No Data */
+.no-data-container {
+  height: 280px;
+  width: 100%;
+}
+
+.no-data-container img {
+  height: 230px;
+  width: 230px;
 }

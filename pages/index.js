@@ -10,13 +10,16 @@ import {
   HomeHero,
   Layout,
   HomePost,
-} from "@/components";
+  NoData
+} from "../components";
 
 import football from "../assets/football.png";
 import lifeskills from "../assets/lifeskills.png";
 import computer from "../assets/computer.png";
 
 import learn from "../assets/learning.png";
+import { getSortedPostsData } from "../util/posts";
+import { getSortedEventsData } from "../util/events";
 
 export default function Home({ posts, events }) {
   return (
@@ -59,7 +62,9 @@ export default function Home({ posts, events }) {
           <div className="home-posts-container">
             <div className="flex flex-1 flex-col gap-5">
               <div className="flex justify-between items-center gap-3">
-                <h1 className="text-darker text-3xl font-bold">Blog Corner</h1>
+                <h1 className="font-semibold text-xl uppercase text-gray-700">
+                  Reading Corner
+                </h1>
                 <Link href="/blog" className="posts-link">
                   All Posts <ArrowRightAltOutlinedIcon className="opacity-75" />
                 </Link>
@@ -81,7 +86,7 @@ export default function Home({ posts, events }) {
             </div>
 
             <div className="flex flex-1 gap-10 home-posts pb-5">
-              {posts.length > 0 &&
+              {posts.length > 0 ? (
                 posts.map((post) => (
                   <HomePost
                     key={post.id}
@@ -90,7 +95,10 @@ export default function Home({ posts, events }) {
                     slug={post.slug}
                     content={post.description}
                   />
-                ))}
+                ))
+              ) : (
+                <NoData />
+              )}
             </div>
           </div>
         </div>
@@ -109,28 +117,35 @@ export default function Home({ posts, events }) {
       <section className="py-[7rem]">
         <div className="container mx-auto">
           <div className="flex justify-between items-center mb-8">
-            <h1 className="font-semibold text-xl">Upcoming Events</h1>
+            <h1 className="font-semibold text-xl uppercase text-gray-700">
+                Upcoming Events
+            </h1>
             <Link href="/events">
               All Events <ArrowRightAltOutlinedIcon className="opacity-75" />
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14">
-            {events.length > 0 &&
+      {
+        events.length > 0 ?
+          <div className="grid justify-content-center grid-cols-1 lg:grid-cols-2 gap-14">
+            {
               events
                 .slice(0, 2)
                 .map((event) => (
                   <Event
                     key={event.id}
-                    image={event.featuredImage}
+                    image={event.image}
                     title={event.title}
                     slug={event.slug}
                     venue={event.venue}
                     content={event.description}
                     date={event.date}
                   />
-                ))}
+                )) }
           </div>
+          :
+        <NoData />
+      }
         </div>
       </section>
 
@@ -143,15 +158,27 @@ export default function Home({ posts, events }) {
   );
 }
 
-export const getStaticProps = async () => {
-  const blogUrl = `${process.env.BASE_URL}/blog`;
-  const eventsUrl = `${process.env.BASE_URL}/events`;
+// export const getStaticProps = async () => {
+//   const blogUrl = `${process.env.BASE_URL}/blog`;
+//   const eventsUrl = `${process.env.BASE_URL}/events`;
 
-  const response = await fetch(blogUrl);
-  const posts = await response.json();
+//   const response = await fetch(blogUrl);
+//   const posts = await response.json();
 
-  const data = await fetch(eventsUrl);
-  const events = await data.json();
+//   const data = await fetch(eventsUrl);
+//   const events = await data.json();
 
-  return { props: { posts, events } };
-};
+//   return { props: { posts, events } };
+// };
+
+// Fetch posts & events from file system
+export async function getStaticProps() {
+  const posts = getSortedPostsData();
+
+  const events = getSortedEventsData();
+
+  return {
+    props: { posts, events },
+  };
+}
+

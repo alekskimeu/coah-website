@@ -1,7 +1,9 @@
 import Head from "next/head";
-import { Layout, Event, TopEvent } from "@/components";
+import { Layout, Event, TopEvent, NoData } from "../components";
 
-export default function Events({ events }) {
+import {getSortedEventsData} from '../util/events'
+
+export default function Events({events}) {
   return (
     <Layout>
       <Head>
@@ -12,24 +14,25 @@ export default function Events({ events }) {
         />
       </Head>
       <section className="pt-[4rem] pb-[5rem]">
-        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14">
-          {events.length > 1 &&
-            events
-              .slice(0, 2)
-              .map((event) => (
-                <TopEvent
-                  key={event.id}
-                  slug={event.slug}
-                  image={event.featuredImage}
-                  title={event.title}
-                  venue={event.venue}
-                  content={event.description}
-                  date={event.date}
-                  time={8}
-                  height="250px"
-                />
-              ))}
-        </div>
+        {events.length > 1 ?
+          <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14">
+              {events
+                .slice(0, 2)
+                .map((event) => (
+                  <TopEvent
+                    key={event.id}
+                    slug={event.slug}
+                    image={event.image}
+                    title={event.title}
+                    venue={event.venue}
+                    content={event.description}
+                    date={event.date}
+                    time={8}
+                    height="100px"
+                  />
+                ))}
+          </div>
+        : <NoData />}
       </section>
 
       <section>
@@ -41,13 +44,13 @@ export default function Events({ events }) {
                 <Event
                   key={event.id}
                   slug={event.slug}
-                  image={event.featuredImage}
+                  image={event.image}
                   title={event.title}
                   venue={event.venue}
                   content={event.description}
                   date={event.date}
                   time={8}
-                  height="250px"
+                  height="100px"
                 />
               ))}
         </div>
@@ -56,10 +59,19 @@ export default function Events({ events }) {
   );
 }
 
-export const getStaticProps = async () => {
-  const url = `${process.env.BASE_URL}/events`;
+// export const getStaticProps = async () => {
+//   const url = `${process.env.BASE_URL}/events`;
 
-  const response = await fetch(url);
-  const events = await response.json();
-  return { props: { events } };
-};
+//   const response = await fetch(url);
+//   const events = await response.json();
+//   return { props: { events } };
+// };
+
+// Fetch events from file system
+export async function getStaticProps() {
+  const events = getSortedEventsData();
+
+  return {
+    props: { events },
+  };
+}

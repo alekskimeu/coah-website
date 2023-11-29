@@ -1,10 +1,10 @@
 import Head from "next/head";
 
-import { Layout, Activity, SectionHeader } from "@/components";
+import { Layout, Activity, SectionHeader, NoData } from "../components";
 
-import image from "../assets/item.png";
+import { activities } from "../data/activities";
 
-export default function Activities({ activities }) {
+export default function Activities() {
   return (
     <Layout>
       <Head>
@@ -19,26 +19,29 @@ export default function Activities({ activities }) {
           title="What we do"
           description="The world breaks everyone, and afterwards, many are strong at the broken places."
         />
-        <div className="container mx-auto activities">
-          {activities.length > 0 &&
-            activities.map((activity) => (
-              <Activity
-                key={activity.id}
-                image={activity.activityImage}
-                title={activity.title}
-                description={activity.description}
-              />
-            ))}
-        </div>
+        {activities.length > 0 ?
+          <div className="container mx-auto activities">
+            {activities.map((activity) => (
+                <Activity
+                  key={activity.id}
+                  image={activity.image}
+                  title={activity.title}
+                  description={activity.description}
+                />
+              ))}
+          </div>
+          : 
+          <NoData />
+        }
       </section>
     </Layout>
   );
 }
 
-export const getStaticProps = async () => {
-  const url = `${process.env.BASE_URL}/activities`;
+// export const getStaticProps = async () => {
+//   const url = `${process.env.BASE_URL}/activities`;
 
-  const response = await fetch(url);
-  const activities = await response.json();
-  return { props: { activities } };
-};
+//   const response = await fetch(url);
+//   const activities = await response.json();
+//   return { props: { activities } };
+// };

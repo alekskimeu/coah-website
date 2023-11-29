@@ -8,7 +8,7 @@ const Social = () => {
   return (
     <section className="py-[5rem] lg:py-[7rem] flex justify-center items-center">
       <div className="container mx-auto flex flex-col md:flex-row justify-center items-center gap-5">
-        <p className="text-gray-600">Find us online</p>
+        <p className="text-gray-600 text-[1.1rem]">Find us online</p>
         <div className="flex justify-center items-center gap-8">
           <a
             href="https://www.facebook.com/coloursofartsandheartfootballacademy/"

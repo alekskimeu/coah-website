@@ -8,7 +8,10 @@ import { Layout } from "../../components";
 
 import image from "../../assets/item.png";
 
-import { getSingleNewsletter, getAllNewslettersSlugs } from "../../util/posts";
+import {
+  getSingleNewsletter,
+  getAllNewslettersSlugs,
+} from "../../util/newsletters";
 
 export default function Newsletter({ newsletter }) {
   return (

@@ -44,7 +44,7 @@ export function getSortedPostsData() {
 }
 
 // Return an array of all slugs
-export function getAllArticlesSlugs() {
+export function getAllPostsSlugs() {
   const fileNames = fs.readdirSync(postsDirectory);
 
   return fileNames.map((fileName) => {

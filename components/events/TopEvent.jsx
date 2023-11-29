@@ -3,14 +3,13 @@ import Link from "next/link";
 import Image from "next/image";
 import dayjs from "dayjs";
 
-import ReactHtmlParser from "react-html-parser";
+import parse from "html-react-parser";
 import { IconButton } from "@mui/material";
 import ShareIcon from "@mui/icons-material/Share";
 import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
 import ArrowRightAltOutlinedIcon from "@mui/icons-material/ArrowRightAltOutlined";
 
 const TopEvent = ({ image, title, content, date, slug, venue }) => {
-
   return (
     <div className="group rounded-lg border-none shadow-lg grid grid-cols-1 md:grid-cols-2 items-center overflow-hidden">
       <Image
@@ -28,13 +27,15 @@ const TopEvent = ({ image, title, content, date, slug, venue }) => {
           {title} <ArrowRightAltOutlinedIcon className="opacity-75" />
         </Link>
         <p className="text-xs text-[#61677A] opacity-70 mb-5">{venue}</p>
-        <div className="text-gray-600 line-clamp-4 opacity-80">{content}</div>
+        <div className="text-gray-600 line-clamp-4 opacity-80">
+          {parse(content)}
+        </div>
         <div className="mt-7 flex items-center gap-2">
           <CalendarMonthOutlinedIcon
             style={{ color: "#61677A", opacity: ".5" }}
           />
           <span className="text-xs opacity-90 pt-1 text-[#61677A]">
-          {dayjs(date).format("DD-MMM-YYYY")}
+            {dayjs(date).format("DD-MMM-YYYY")}
           </span>
         </div>
       </div>

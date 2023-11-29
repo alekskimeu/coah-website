@@ -6,7 +6,7 @@ import dayjs from "dayjs";
 import { IconButton } from "@mui/material";
 import ShareIcon from "@mui/icons-material/Share";
 import ArrowRightAltOutlinedIcon from "@mui/icons-material/ArrowRightAltOutlined";
-import ReactHtmlParser from "react-html-parser";
+import parse from "html-react-parser";
 
 const TopNewsletter = ({ image, title, content, date, time }) => {
   return (
@@ -28,7 +28,7 @@ const TopNewsletter = ({ image, title, content, date, time }) => {
           </Link>
         </h1>
         <div className="text-gray-600 line-clamp-4 opacity-80">
-          {ReactHtmlParser(content)}
+          {parse(content)}
         </div>
         <div className="mt-5 flex justify-between items-center">
           {/* <span className="text-[.9rem] text-gray-400">{time} min read</span>

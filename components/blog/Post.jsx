@@ -1,7 +1,8 @@
 import React from "react";
 import Link from 'next/link'
 import Image from "next/image";
-import ReactHtmlParser from "react-html-parser";
+import parse from 'html-react-parser'
+
 
 import { IconButton } from "@mui/material";
 import ShareIcon from "@mui/icons-material/Share";
@@ -26,7 +27,7 @@ const Post = ({ image, title, content, date, time }) => {
             {title} <ArrowRightAltOutlinedIcon className="opacity-75" />
           </Link>
         </h1>
-        <div className="line-clamp-3 text-gray-600 opacity-80">{ReactHtmlParser(content)}</div>
+        <div className="line-clamp-3 text-gray-600 opacity-80">{parse(content)}</div>
         <div className="mt-5 flex justify-between items-center">
           <span className="text-[.8rem] text-gray-400">{date.join("-")}</span>
           {/* <span className="text-[.9rem] text-gray-400">{time} min read</span>

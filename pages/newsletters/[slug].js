@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import ReactHtmlParser from "react-html-parser";
+import parse from "html-react-parser";
 import { IconButton } from "@mui/material";
 import ShareIcon from "@mui/icons-material/Share";
 
@@ -8,8 +8,7 @@ import { Layout } from "../../components";
 
 import image from "../../assets/item.png";
 
-import { getSingleNewsletter, getAllNewslettersSlugs} from '../../util/posts'
-
+import { getSingleNewsletter, getAllNewslettersSlugs } from "../../util/posts";
 
 export default function Newsletter({ newsletter }) {
   return (
@@ -32,9 +31,7 @@ export default function Newsletter({ newsletter }) {
           </div>
 
           <div className="mt-4">
-            <div className="text-gray-700">
-              {ReactHtmlParser(newsletter.content)}
-            </div>
+            <div className="text-gray-700">{parse(newsletter.content)}</div>
           </div>
 
           {/* <div className="mt-6">
@@ -72,9 +69,7 @@ export default function Newsletter({ newsletter }) {
 //   return { paths, fallback: false };
 // };
 
-
 export async function getStaticPaths() {
-
   // Return a list of possible values for slug
   const paths = getAllNewslettersSlugs();
 
@@ -86,13 +81,12 @@ export async function getStaticPaths() {
 
 // Fetch newsletter from file system
 export async function getStaticProps({ params }) {
-
   // Fetch particular post given slug in params
   const newsletter = await getSingleNewsletter(params.slug);
 
   return {
     props: {
-      newsletter
+      newsletter,
     },
   };
 }

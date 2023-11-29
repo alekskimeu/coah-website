@@ -1,9 +1,9 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import ReactHtmlParser from "react-html-parser";
+import parse from "html-react-parser";
 
-import dayjs from 'dayjs'
+import dayjs from "dayjs";
 
 import { IconButton } from "@mui/material";
 import ShareIcon from "@mui/icons-material/Share";
@@ -32,7 +32,7 @@ const Newsletter = ({ image, title, content, date, time }) => {
           </Link>
         </h1>
         <div className="line-clamp-3 text-gray-600 opacity-80">
-          {ReactHtmlParser(content)}
+          {parse(content)}
         </div>
         <div className="mt-5 flex justify-between items-center">
           <span className="text-[.8rem] text-gray-400">

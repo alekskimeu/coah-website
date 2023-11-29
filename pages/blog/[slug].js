@@ -1,12 +1,12 @@
 import Image from "next/image";
 
-import ReactHtmlParser from "react-html-parser";
+import parse from "html-react-parser";
 import { IconButton } from "@mui/material";
 import ShareIcon from "@mui/icons-material/Share";
 
 import { Layout } from "../../components";
 
-import { getAllPostsSlugs, getSinglePost} from '../../util/posts'
+import { getAllPostsSlugs, getSinglePost } from "../../util/posts";
 
 export default function Post({ post }) {
   return (
@@ -31,7 +31,7 @@ export default function Post({ post }) {
           </div>
 
           <div className="mt-4">
-            <div className="text-gray-700">{ReactHtmlParser(post.content)}</div>
+            <div className="text-gray-700">{parse(post.content)}</div>
           </div>
 
           {/* <div className="mt-6">
@@ -68,9 +68,7 @@ export default function Post({ post }) {
 //   return { paths, fallback: false };
 // };
 
-
 export async function getStaticPaths() {
-
   // Return a list of possible values for slug
   const paths = getAllPostsSlugs();
 
@@ -82,13 +80,12 @@ export async function getStaticPaths() {
 
 // Fetch post from file system
 export async function getStaticProps({ params }) {
-
   // Fetch particular post given slug in params
   const post = await getSinglePost(params.slug);
 
   return {
     props: {
-      post
+      post,
     },
   };
 }

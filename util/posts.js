@@ -4,9 +4,7 @@ import matter from "gray-matter";
 import { marked } from "marked";
 
 // Posts directory
-// const postsDirectory = `${process.cwd()}/data/posts`;
-
-const postsDirectory = path.join(process.cwd(), "data/posts");
+const postsDirectory = `${process.cwd()}/data/posts`;
 
 export function getSortedPostsData() {
   // Get filenames under /data/articles

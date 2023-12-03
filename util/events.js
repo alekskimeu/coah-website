@@ -3,10 +3,8 @@ import path from "path";
 import matter from "gray-matter";
 import { marked } from "marked";
 
-// Posts directory
-// const eventsDirectory = `${process.cwd()}/data/events`;
-
-const eventsDirectory = path.join(process.cwd(), "data/events");
+// Events directory
+const eventsDirectory = `${process.cwd()}/data/events`;
 
 export function getSortedEventsData() {
   // Get filenames under /data/events
@@ -33,7 +31,7 @@ export function getSortedEventsData() {
     };
   });
 
-  // Sort posts by date
+  // Sort Events by date
   return allEventsData.sort(({ date: a }, { date: b }) => {
     if (new Date(a) < new Date(b)) {
       return 1;

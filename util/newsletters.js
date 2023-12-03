@@ -3,10 +3,8 @@ import path from "path";
 import matter from "gray-matter";
 import { marked } from "marked";
 
-// Posts directory
-// const newslettersDirectory = `${process.cwd()}/data/newsletters`;
-
-const newslettersDirectory = path.join(process.cwd(), "data/newsletters");
+// Newsletters directory
+const newslettersDirectory = `${process.cwd()}/data/newsletters`;
 
 export function getSortedNewslettersData() {
   // Get filenames under /data/articles

@@ -3,7 +3,7 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <footer
-      className="h-[7rem] lg:h-[5rem] bg-[#283891] flex items-center py-4 px-[2rem] absolute bottom-0"
+      className="h-[10rem] lg:h-[5rem] bg-[#283891] flex items-center py-5 px-[2rem] absolute bottom-0"
       style={{ width: "100%" }}
     >
       <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center gap-5 text-white">
@@ -27,7 +27,7 @@ const Footer = () => {
             Newsletters
           </Link>
         </div>
-        <span className="opacity-80 text-xs">
+        <span className="mt-3 md:mt-0 opacity-80 text-center text-xs">
           &copy; COAH {new Date().getFullYear()} - All Rights Reserved
         </span>
       </div>

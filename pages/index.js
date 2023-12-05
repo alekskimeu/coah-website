@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Head from "next/head";
+import Image from "next/image";
 import ArrowRightAltOutlinedIcon from "@mui/icons-material/ArrowRightAltOutlined";
 
 import {
@@ -16,6 +17,7 @@ import {
 import football from "../assets/football.png";
 import lifeskills from "../assets/lifeskills.png";
 import computer from "../assets/computer.png";
+import reading from "../assets/reading.png";
 
 import learn from "../assets/learning.png";
 import { getSortedPostsData } from "../util/posts";
@@ -33,7 +35,7 @@ export default function Home({ posts, events }) {
       </Head>
       <HomeHero />
       <section className="py-[5rem]">
-        <div className="container mx-auto bg-[#283891] rounded-2xl py-[5rem] px-[3rem] flex flex-col gap-15 lg:gap-10">
+        <div className="container mx-auto bg-[#283891] rounded-lg md:rounded-2xl py-[5rem] px-[2rem] md:[3rem] flex flex-col gap-15 lg:gap-10">
           <div className="max-w-sm flex-none mb-10 lg:mb-0">
             <h1 className="text-white text-xl font-semibold mb-2">
               What we do
@@ -62,14 +64,10 @@ export default function Home({ posts, events }) {
           <div className="home-posts-container">
             <div className="flex flex-1 flex-col gap-5">
               <div className="flex justify-between items-center gap-3">
-                <h1 className="font-semibold text-xl uppercase text-gray-700">
-                  Reading Corner
-                </h1>
-                <Link href="/blog" className="posts-link">
-                  All Posts <ArrowRightAltOutlinedIcon className="opacity-75" />
-                </Link>
+                <h1 className="font-semibold uppercase text-gray-700">Blog</h1>
+                <Image src={reading} height={25} />
               </div>
-              <p>
+              <p className="text-gray-700">
                 The world breaks everyone and afterward many are strong at the
                 broken places. But those that will not break it kills. It kills
                 the very good and the very gentle and the very brave
@@ -85,7 +83,7 @@ export default function Home({ posts, events }) {
               </Link>
             </div>
 
-            <div className="flex flex-1 gap-10 home-posts pb-5">
+            <div className="flex justify-center flex-1 gap-10 home-posts pb-5">
               {posts.length > 0 ? (
                 posts.map((post) => (
                   <HomePost

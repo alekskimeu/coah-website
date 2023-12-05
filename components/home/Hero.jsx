@@ -8,25 +8,25 @@ import image from "../../assets/hero.png";
 
 const Hero = () => {
   return (
-    <section className="py-[7rem] bg-[#283891] rounded-b-lg">
+    <section className="py-[2rem] md:py-[7rem] bg-[#283891] rounded-b-lg">
       <div className="container mx-auto flex flex-col-reverse items-center justify-center lg:flex-row lg:justify-between gap-10">
         <div className="flex flex-col items-center lg:items-start text-center lg:text-left gap-5">
           <div>
-            <h1 className="text-white font-bold text-4xl lg:max-w-xl mb-1">
+            <h1 className="text-white font-bold text-2xl md:text-3xl lg:max-w-xl mb-1">
               COAH FOUNDATION
             </h1>
 
-            <h2 className="text-white opacity-90">
+            <h3 className="text-white opacity-90">
               COLOUR OF ART & HEART FOUNDATION
-            </h2>
+            </h3>
           </div>
 
-          <h3 className="lg:max-w-2xl text-white opacity-80 text-xl">
+          <h3 className="lg:max-w-2xl text-white opacity-80 text-lg md:text-xl">
             A community based organization located in Mathare Nairobi, Kenya
             aiming to eradicate poverty through sport for holistic development.
           </h3>
 
-          <div className="flex items-center gap-10 mt-3">
+          <div className="flex flex-col md:flex-row items-center gap-10 mt-3">
             <Link
               href="/donate"
               className="bg-white text-[#283891] rounded-full pt-[.8rem] pb-[.6rem] px-10"

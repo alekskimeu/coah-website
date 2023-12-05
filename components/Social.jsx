@@ -6,7 +6,7 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 
 const Social = () => {
   return (
-    <section className="py-[5rem] lg:py-[7rem] flex justify-center items-center">
+    <section className="pt-[5rem] pb-[9rem] lg:py-[7rem] flex justify-center items-center">
       <div className="container mx-auto flex flex-col md:flex-row justify-center items-center gap-5">
         <p className="text-gray-600 text-[1.1rem]">Find us online</p>
         <div className="flex justify-center items-center gap-8">

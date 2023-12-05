@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import ReactHtmlParser from "react-html-parser";
 
 import Markdown from "react-markdown";
 

@@ -2,7 +2,6 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import parse from "html-react-parser";
-import ReactHtmlParser from "react-html-parser";
 import Markdown from "react-markdown";
 
 import dayjs from "dayjs";

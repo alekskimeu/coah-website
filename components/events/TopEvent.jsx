@@ -2,7 +2,6 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import dayjs from "dayjs";
-import ReactHtmlParser from "react-html-parser";
 
 import parse from "html-react-parser";
 import { IconButton } from "@mui/material";

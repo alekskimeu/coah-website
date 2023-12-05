@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import parse from "html-react-parser";
 import ReactHtmlParser from "react-html-parser";
+import Markdown from "react-markdown";
 
 import dayjs from "dayjs";
 
@@ -33,7 +34,8 @@ const Newsletter = ({ image, title, content, date, time }) => {
           </Link>
         </h1>
         <div className="line-clamp-3 text-gray-600 opacity-80">
-          {ReactHtmlParser(content)}
+          {/* {parse(content)} */}
+          <Markdown>{content}</Markdown>
         </div>
         <div className="mt-5 flex justify-between items-center">
           <span className="text-[.8rem] text-gray-400">{date}</span>

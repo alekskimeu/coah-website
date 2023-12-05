@@ -3,6 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import ReactHtmlParser from "react-html-parser";
 
+import Markdown from "react-markdown";
+
 import parse from "html-react-parser";
 
 import { IconButton } from "@mui/material";
@@ -29,7 +31,8 @@ const TopPost = ({ image, title, content, date, time }) => {
           </Link>
         </h1>
         <div className="text-gray-600 line-clamp-4">
-          {ReactHtmlParser(content)}
+          {/* {parse(content)} */}
+          <Markdown>{content}</Markdown>
         </div>
         <div className="mt-5 flex justify-between items-center">
           {/* <span className="text-[.9rem] text-gray-400">{time} min read</span>

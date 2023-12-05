@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+import Markdown from "react-markdown";
 import parse from "html-react-parser";
 import { IconButton } from "@mui/material";
 import ShareIcon from "@mui/icons-material/Share";
@@ -34,7 +35,11 @@ export default function Newsletter({ newsletter }) {
           </div>
 
           <div className="mt-4">
-            <div className="text-gray-700">{parse(newsletter.content)}</div>
+            <div className="text-gray-700">
+              {/* {parse(newsletter.content)} */}
+
+              <Markdown>{newsletter.content}</Markdown>
+            </div>
           </div>
 
           {/* <div className="mt-6">

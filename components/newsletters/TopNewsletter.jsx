@@ -29,7 +29,7 @@ const TopNewsletter = ({ image, title, content, date, time }) => {
           </Link>
         </h1>
         <div className="text-gray-600 line-clamp-4 opacity-80">
-          {ReactHtmlParser(content)}
+          {parse(content)}
         </div>
         <div className="mt-5 flex justify-between items-center">
           {/* <span className="text-[.9rem] text-gray-400">{time} min read</span>

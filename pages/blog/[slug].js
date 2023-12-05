@@ -7,6 +7,7 @@ import ShareIcon from "@mui/icons-material/Share";
 import { Layout } from "../../components";
 
 import { getAllPostsSlugs, getSinglePost } from "../../util/posts";
+import Markdown from "react-markdown";
 
 export default function Post({ post }) {
   return (
@@ -31,7 +32,10 @@ export default function Post({ post }) {
           </div>
 
           <div className="mt-4">
-            <div className="text-gray-700">{parse(post.content)}</div>
+            <div className="text-gray-700">
+              {/* {parse(post.content)} */}
+              <Markdown>{post.content}</Markdown>
+            </div>
           </div>
 
           {/* <div className="mt-6">

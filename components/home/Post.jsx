@@ -2,6 +2,8 @@ import React from "react";
 import Image from "next/image";
 import dayjs from "dayjs";
 
+import Markdown from "react-markdown";
+
 import { IconButton } from "@mui/material";
 import ShareIcon from "@mui/icons-material/Share";
 
@@ -14,7 +16,10 @@ const Post = ({ image, title, content, date }) => {
       />
       <div className="p-5 relative bg-white rounded-b-xl">
         <h1 className="mb-4 mt-0 font-semibold text-xl post-title">{title}</h1>
-        <p className="text-gray-600">{content}</p>
+        <p className="text-gray-600">
+          <Markdown>{content}</Markdown>
+          {/* {parse(content)} */}
+        </p>
         <div className="mt-3 flex justify-between items-center">
           <span className="text-xs opacity-70">{date}</span>
 

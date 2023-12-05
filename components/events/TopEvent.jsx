@@ -9,6 +9,7 @@ import { IconButton } from "@mui/material";
 import ShareIcon from "@mui/icons-material/Share";
 import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
 import ArrowRightAltOutlinedIcon from "@mui/icons-material/ArrowRightAltOutlined";
+import Markdown from "react-markdown";
 
 const TopEvent = ({ image, title, content, date, slug, venue }) => {
   return (
@@ -29,7 +30,8 @@ const TopEvent = ({ image, title, content, date, slug, venue }) => {
         </Link>
         <p className="text-xs text-[#61677A] opacity-70 mb-5">{venue}</p>
         <div className="text-gray-600 line-clamp-4 opacity-80">
-          {ReactHtmlParser(content)}
+          {/* {parse(content)} */}
+          <Markdown>{content}</Markdown>
         </div>
         <div className="mt-7 flex items-center gap-2">
           <CalendarMonthOutlinedIcon

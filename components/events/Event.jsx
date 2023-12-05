@@ -31,10 +31,7 @@ const Event = ({ image, title, content, date, time }) => {
 
         <div className="line-clamp-3 text-gray-600 opacity-80">{content}</div>
         <div className="mt-5 flex justify-between items-center">
-          <span className="text-[.8rem] text-gray-400">
-            {" "}
-            {dayjs(date).format("DD-MMM-YYYY")}
-          </span>
+          <span className="text-[.8rem] text-gray-400"> {date}</span>
           {/* <span className="text-[.9rem] text-gray-400">{time} min read</span>
 
           <IconButton style={{ backgroundColor: "#EAF1FB" }}>

@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import dayjs from "dayjs";
+import ReactHtmlParser from "react-html-parser";
 
 import { IconButton } from "@mui/material";
 import ShareIcon from "@mui/icons-material/Share";
@@ -28,7 +29,7 @@ const TopNewsletter = ({ image, title, content, date, time }) => {
           </Link>
         </h1>
         <div className="text-gray-600 line-clamp-4 opacity-80">
-          {parse(content)}
+          {ReactHtmlParser(content)}
         </div>
         <div className="mt-5 flex justify-between items-center">
           {/* <span className="text-[.9rem] text-gray-400">{time} min read</span>
@@ -36,9 +37,7 @@ const TopNewsletter = ({ image, title, content, date, time }) => {
           <IconButton style={{ backgroundColor: "#EAF1FB" }}>
             <ShareIcon style={{ opacity: ".5" }} />
           </IconButton> */}
-          <span className="text-[.7rem] text-gray-400">
-            {dayjs(date.join("-")).format("DD-MMM-YYYY")}
-          </span>
+          <span className="text-[.7rem] text-gray-400">{date}</span>
         </div>
       </div>
     </div>

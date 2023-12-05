@@ -1,9 +1,9 @@
 import Head from "next/head";
 import { Layout, Event, TopEvent, NoData } from "../components";
 
-import {getSortedEventsData} from '../util/events'
+import { getSortedEventsData } from "../util/events";
 
-export default function Events({events}) {
+export default function Events({ events }) {
   return (
     <Layout>
       <Head>
@@ -14,25 +14,25 @@ export default function Events({events}) {
         />
       </Head>
       <section className="pt-[4rem] pb-[5rem]">
-        {events.length > 1 ?
+        {events.length > 1 ? (
           <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14">
-              {events
-                .slice(0, 2)
-                .map((event) => (
-                  <TopEvent
-                    key={event.id}
-                    slug={event.slug}
-                    image={event.image}
-                    title={event.title}
-                    venue={event.venue}
-                    content={event.description}
-                    date={event.date}
-                    time={8}
-                    height="100px"
-                  />
-                ))}
+            {events.slice(0, 2).map((event) => (
+              <TopEvent
+                key={event.id}
+                slug={event.slug}
+                image={event.image}
+                title={event.title}
+                venue={event.venue}
+                content={event.content}
+                date={event.date}
+                time={8}
+                height="100px"
+              />
+            ))}
           </div>
-        : <NoData />}
+        ) : (
+          <NoData />
+        )}
       </section>
 
       <section>
@@ -47,7 +47,7 @@ export default function Events({events}) {
                   image={event.image}
                   title={event.title}
                   venue={event.venue}
-                  content={event.description}
+                  content={event.content}
                   date={event.date}
                   time={8}
                   height="100px"

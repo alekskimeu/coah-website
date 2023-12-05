@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import ReactHtmlParser from "react-html-parser";
 
 import parse from "html-react-parser";
 
@@ -22,7 +23,9 @@ const HomePost = ({ image, title, content, slug }) => {
         >
           {title} <ArrowRightAltOutlinedIcon className="opacity-75" />
         </Link>
-        <div className="text-gray-500 mt-2 line-clamp-3">{parse(content)}</div>
+        <div className="text-gray-500 mt-2 line-clamp-3">
+          {ReactHtmlParser(content)}
+        </div>
       </div>
     </div>
   );

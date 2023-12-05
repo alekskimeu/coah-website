@@ -16,9 +16,7 @@ const Post = ({ image, title, content, date }) => {
         <h1 className="mb-4 mt-0 font-semibold text-xl post-title">{title}</h1>
         <p className="text-gray-600">{content}</p>
         <div className="mt-3 flex justify-between items-center">
-          <span className="text-xs opacity-70">
-            {dayjs(date.join("-")).format("DD-MMM-YYYY")}
-          </span>
+          <span className="text-xs opacity-70">{date}</span>
 
           <IconButton style={{ backgroundColor: "#EAF1FB" }}>
             <ShareIcon style={{ opacity: ".5" }} />

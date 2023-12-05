@@ -1,9 +1,9 @@
 ---
 title: "End Year Reunion 2021"
-author: "Alex Kimeu"
 # intro: "I grew up in the streets of Mathare & got to spend a good chunk of my childhood & teenagehood at MYSA Mathare North Library."
 date: "2020-01-01"
-image:
+slug: "end-year-reunion"
+image: "https://unsplash.com/photos/a-couple-of-women-standing-next-to-each-other-B8892rcCI7g"
 ---
 
 I grew up in the streets of Mathare & got to spend a good chunk of my childhood & teenagehood at MYSA Mathare North Library. In that Library, apart from reading there's a bunch of other activities such as: Traditional dances, poetry, acting, to mention just a few. These activities are what attracted me to joining the library as an 11 years old kid. My friends and I were fascinated by the sound of

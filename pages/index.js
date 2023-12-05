@@ -10,7 +10,7 @@ import {
   HomeHero,
   Layout,
   HomePost,
-  NoData
+  NoData,
 } from "../components";
 
 import football from "../assets/football.png";
@@ -93,7 +93,7 @@ export default function Home({ posts, events }) {
                     image={post.coverImage}
                     title={post.title}
                     slug={post.slug}
-                    content={post.description}
+                    content={post.content}
                   />
                 ))
               ) : (
@@ -118,34 +118,30 @@ export default function Home({ posts, events }) {
         <div className="container mx-auto">
           <div className="flex justify-between items-center mb-8">
             <h1 className="font-semibold text-xl uppercase text-gray-700">
-                Upcoming Events
+              Upcoming Events
             </h1>
             <Link href="/events">
               All Events <ArrowRightAltOutlinedIcon className="opacity-75" />
             </Link>
           </div>
 
-      {
-        events.length > 0 ?
-          <div className="grid justify-content-center grid-cols-1 lg:grid-cols-2 gap-14">
-            {
-              events
-                .slice(0, 2)
-                .map((event) => (
-                  <Event
-                    key={event.id}
-                    image={event.image}
-                    title={event.title}
-                    slug={event.slug}
-                    venue={event.venue}
-                    content={event.description}
-                    date={event.date}
-                  />
-                )) }
-          </div>
-          :
-        <NoData />
-      }
+          {events.length > 0 ? (
+            <div className="grid justify-content-center grid-cols-1 lg:grid-cols-2 gap-14">
+              {events.slice(0, 2).map((event) => (
+                <Event
+                  key={event.id}
+                  image={event.image}
+                  title={event.title}
+                  slug={event.slug}
+                  venue={event.venue}
+                  content={event.content}
+                  date={event.date}
+                />
+              ))}
+            </div>
+          ) : (
+            <NoData />
+          )}
         </div>
       </section>
 
@@ -181,4 +177,3 @@ export async function getStaticProps() {
     props: { posts, events },
   };
 }
-

@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import parse from "html-react-parser";
+import ReactHtmlParser from "react-html-parser";
 
 import dayjs from "dayjs";
 
@@ -32,12 +33,10 @@ const Newsletter = ({ image, title, content, date, time }) => {
           </Link>
         </h1>
         <div className="line-clamp-3 text-gray-600 opacity-80">
-          {parse(content)}
+          {ReactHtmlParser(content)}
         </div>
         <div className="mt-5 flex justify-between items-center">
-          <span className="text-[.8rem] text-gray-400">
-            {dayjs(date.join("-")).format("DD-MMM-YYYY")}
-          </span>
+          <span className="text-[.8rem] text-gray-400">{date}</span>
           {/* <span className="text-[.9rem] text-gray-400">{time} min read</span>
 
           <IconButton style={{ backgroundColor: "#EAF1FB" }}>

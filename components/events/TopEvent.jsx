@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import dayjs from "dayjs";
+import ReactHtmlParser from "react-html-parser";
 
 import parse from "html-react-parser";
 import { IconButton } from "@mui/material";
@@ -28,15 +29,13 @@ const TopEvent = ({ image, title, content, date, slug, venue }) => {
         </Link>
         <p className="text-xs text-[#61677A] opacity-70 mb-5">{venue}</p>
         <div className="text-gray-600 line-clamp-4 opacity-80">
-          {parse(content)}
+          {ReactHtmlParser(content)}
         </div>
         <div className="mt-7 flex items-center gap-2">
           <CalendarMonthOutlinedIcon
             style={{ color: "#61677A", opacity: ".5" }}
           />
-          <span className="text-xs opacity-90 pt-1 text-[#61677A]">
-            {dayjs(date).format("DD-MMM-YYYY")}
-          </span>
+          <span className="text-xs opacity-90 pt-1 text-[#61677A]">{date}</span>
         </div>
       </div>
     </div>

@@ -13,25 +13,23 @@ export default function Newsletters({ newsletters }) {
         />
       </Head>
       <section className="pt-[4rem] pb-[5rem]">
-          {newsletters.length > 1 ?
-        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14">
-            {newsletters
-              .slice(0, 2)
-              .map((newsletter) => (
-                <TopNewsletter
-                  key={newsletter.id}
-                  image={newsletter.coverImage}
-                  title={newsletter.title}
-                  content={newsletter.description}
-                  date={newsletter.createdAt}
-                  time={8}
-                  height="250px"
-                />
-              ))}
-        </div>
-        : 
-        <NoData />
-      }
+        {newsletters.length > 1 ? (
+          <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14">
+            {newsletters.slice(0, 2).map((newsletter) => (
+              <TopNewsletter
+                key={newsletter.id}
+                image={newsletter.coverImage}
+                title={newsletter.title}
+                content={newsletter.content}
+                date={newsletter.createdAt}
+                time={8}
+                height="250px"
+              />
+            ))}
+          </div>
+        ) : (
+          <NoData />
+        )}
       </section>
 
       <section>
@@ -42,7 +40,7 @@ export default function Newsletters({ newsletters }) {
                 key={newsletter.id}
                 image={newsletter.coverImage}
                 title={newsletter.title}
-                content={newsletter.description}
+                content={newsletter.content}
                 date={newsletter.createdAt}
                 time={8}
                 height="250px"
@@ -61,7 +59,6 @@ export default function Newsletters({ newsletters }) {
 //   const newsletters = await response.json();
 //   return { props: { newsletters } };
 // };
-
 
 // Fetch posts from file system
 export async function getStaticProps() {

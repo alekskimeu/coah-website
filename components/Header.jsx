@@ -31,11 +31,8 @@ const Header = () => {
     <header
       className={`bg-[#283891] fixed top-0 w-full h-[5rem] flex items-start lg:items-center z-20 lg:px-[2rem]`}
     >
-      <div className="container mx-auto py-[2rem] relative">
-        <h1 className="text-white font-bold text-3xl lg:hidden absolute left-[2rem] top-[1.5rem]">
-          Logo
-        </h1>
-        {/* <Image src={logo} className="w-20" /> */}
+      <div className="container mx-auto py-[0rem] relative">
+        <Image src={logo} className="w-20 bg-white lg:hidden absolute left-[2rem] top-[0.25rem] rounded-sm" />
 
         <div className="text-white absolute right-[2rem] top-[1.5rem] opacity-70 cursor-pointer lg:hidden">
           {showMobileMenu ? (
@@ -51,10 +48,8 @@ const Header = () => {
         <div
           className={`bg-[#283891] md:bg-transparent ${navHeight} ${display} lg:flex flex-col lg:flex-row lg:justify-between items-center gap-3 w-full absolute top-[5rem] lg:top-0 lg:relative left-[${leftPosition}] lg:left-0 z-20 transition ease-in duration-1500`}
         >
-          {/* <h1 className="hidden lg:block text-white font-bold text-3xl mb-[3rem] lg:mb-0">
-            Logo
-          </h1> */}
-          <Image src={logo} className="w-24 bg-white rounded-sm" />
+        
+          <Image src={logo} className="w-20 bg-white rounded-sm" />
           <div className="flex flex-col mt-[4rem] lg:mt-0 lg:flex-row text-center lg:text-left gap-[2rem] lg:gap-[3rem] text-white">
             <Link href="/" className="text-[1rem] opacity-80 active:text-black">
               Home

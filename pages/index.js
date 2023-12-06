@@ -118,7 +118,7 @@ export default function Home({ posts, events }) {
             <h1 className="font-semibold text-xl uppercase text-gray-700">
               Upcoming Events
             </h1>
-            <Link href="/events">
+            <Link href="/events" className="hidden md:block">
               All Events <ArrowRightAltOutlinedIcon className="opacity-75" />
             </Link>
           </div>

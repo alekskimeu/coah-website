@@ -8,7 +8,7 @@ import image from "../../assets/hero.png";
 
 const Hero = () => {
   return (
-    <section className="py-[2rem] md:py-[7rem] bg-[#283891] rounded-b-lg">
+    <section className="py-[5rem] md:py-[7rem] bg-[#283891] rounded-b-lg">
       <div className="container mx-auto flex flex-col-reverse items-center justify-center lg:flex-row lg:justify-between gap-10">
         <div className="flex flex-col items-center lg:items-start text-center lg:text-left gap-5">
           <div>
@@ -43,7 +43,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <Image src={image} />
+        <Image src={image} className="hidden lg:block" />
       </div>
     </section>
   );

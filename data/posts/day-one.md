@@ -1,12 +1,12 @@
 ---
-title: "End Year Reunion 2021"
-# intro: "I grew up in the streets of Mathare & got to spend a good chunk of my childhood & teenagehood at MYSA Mathare North Library."
+title: "Day One"
 date: "2020-01-01"
-slug: "end-year-reunion"
+slug: "day-one"
 image: "https://unsplash.com/photos/a-couple-of-women-standing-next-to-each-other-B8892rcCI7g"
 ---
 
-I grew up in the streets of Mathare & got to spend a good chunk of my childhood & teenagehood at MYSA Mathare North Library. In that Library, apart from reading there's a bunch of other activities such as: Traditional dances, poetry, acting, to mention just a few. These activities are what attracted me to joining the library as an 11 years old kid. My friends and I were fascinated by the sound of
-drum beats whenever we passed outside the library every evening and one day we decided to pop in and check it out.
+Never before has DigitalOcean been better suited to help startups and small businesses thrive. With a host of investments in and updates to our platform available now and in coming months, companies that choose DigitalOcean are choosing cost-effective solutions that improve your productivity and bring much-needed peace of mind.
 
-There was a team of kids, our age, on the stage joyfully dancing to the sound of the drum beats as a bunch of onlookers cheered them. We were immediately attracted to this and we made up our minds to join the team. This decision would later shape my life for the next decade or so and give me the opportunity to meet awesome people.
+We’re excited to announce several product enhancements that we’re committed to launching in coming months, starting with DigitalOcean Managed Kafka, which is available right now. A fully-managed, event streaming platform as a service, Managed Kafka offers peace of mind by removing the burden associated with managing a complex solution like Kafka on your own.
+
+DigitalOcean has the products and expertise startups and small businesses need to scale simply—and we’re constantly improving our platform to suit the evolving needs of every one of our users. Take a look at some recent updates that your business can take advantage of now, and a few exciting product enhancements planned for the near future.

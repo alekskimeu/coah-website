@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import parse from "html-react-parser";
 import Markdown from "react-markdown";
+import remarkGfm from 'remark-gfm'
 
 import { IconButton } from "@mui/material";
 import ShareIcon from "@mui/icons-material/Share";
@@ -30,10 +31,10 @@ const Post = ({ image, title, content, date, time }) => {
             {title} <ArrowRightAltOutlinedIcon className="opacity-75" />
           </Link>
         </h1>
-        <div className="line-clamp-3 text-gray-600 opacity-80">
-          {/* {parse(content)} */}
-          <Markdown>{content}</Markdown>
-        </div>
+        <div
+          className="text-gray-500 text-gray-500 mt-2 line-clamp-3"
+          dangerouslySetInnerHTML={{ __html: content }}
+        />
         <div className="mt-5 flex justify-between items-center">
           <span className="text-[.8rem] text-gray-400">{date}</span>
           {/* <span className="text-[.9rem] text-gray-400">{time} min read</span>

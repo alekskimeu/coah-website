@@ -24,10 +24,12 @@ const HomePost = ({ image, title, content, slug }) => {
         >
           {title} <ArrowRightAltOutlinedIcon className="opacity-75" />
         </Link>
-        <div className="text-gray-500 mt-2 line-clamp-3">
-          {/* {parse(content)} */}
-          <Markdown>{content}</Markdown>
-        </div>
+        
+
+        <div
+          className="text-gray-500 mt-2 line-clamp-3"
+          dangerouslySetInnerHTML={{ __html: content }}
+        />
       </div>
     </div>
   );

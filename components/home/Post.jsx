@@ -16,10 +16,11 @@ const Post = ({ image, title, content, date }) => {
       />
       <div className="p-5 relative bg-white rounded-b-xl">
         <h1 className="mb-4 mt-0 font-semibold text-xl post-title">{title}</h1>
-        <p className="text-gray-600">
-          <Markdown>{content}</Markdown>
-          {/* {parse(content)} */}
-        </p>
+
+        <div
+          className="text-gray-600"
+          dangerouslySetInnerHTML={{ __html: content }}
+        />
         <div className="mt-3 flex justify-between items-center">
           <span className="text-xs opacity-70">{date}</span>
 

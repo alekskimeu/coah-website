@@ -29,10 +29,10 @@ const TopPost = ({ image, title, content, date, time }) => {
             {title} <ArrowRightAltOutlinedIcon className="opacity-75" />
           </Link>
         </h1>
-        <div className="text-gray-600 line-clamp-4">
-          {/* {parse(content)} */}
-          <Markdown>{content}</Markdown>
-        </div>
+        <div
+          className="text-gray-500 mt-2 line-clamp-3"
+          dangerouslySetInnerHTML={{ __html: content }}
+        />
         <div className="mt-5 flex justify-between items-center">
           {/* <span className="text-[.9rem] text-gray-400">{time} min read</span>
 

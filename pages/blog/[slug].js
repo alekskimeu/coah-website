@@ -32,10 +32,10 @@ export default function Post({ post }) {
           </div>
 
           <div className="mt-4">
-            <div className="text-gray-700">
-              {/* {parse(post.content)} */}
-              <Markdown>{post.content}</Markdown>
-            </div>
+          <div
+          className="text-gray-500"
+          dangerouslySetInnerHTML={{ __html: post.content }}
+        />
           </div>
 
           {/* <div className="mt-6">

@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import parse from "html-react-parser";
 import Markdown from "react-markdown";
-import remarkGfm from 'remark-gfm'
+import remarkGfm from "remark-gfm";
 
 import { IconButton } from "@mui/material";
 import ShareIcon from "@mui/icons-material/Share";
@@ -32,7 +32,7 @@ const Post = ({ image, title, content, date, time }) => {
           </Link>
         </h1>
         <div
-          className="text-gray-500 text-gray-500 mt-2 line-clamp-3"
+          className="text-gray-500 mt-2 line-clamp-3"
           dangerouslySetInnerHTML={{ __html: content }}
         />
         <div className="mt-5 flex justify-between items-center">

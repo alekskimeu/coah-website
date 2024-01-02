@@ -13,24 +13,23 @@ export default function Blog({ posts }) {
         />
       </Head>
       <section className="pt-[4rem] pb-[5rem]">
-          {posts.length > 0 ?
-            <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14">
-                {posts
-                  ?.slice(0, 2)
-                  .map((post) => (
-                    <TopPost
-                      key={post.id}
-                      image={post.coverImage}
-                      title={post.title}
-                      content={post.description}
-                      date={post.createdAt}
-                      time={8}
-                      height="250px"
-                    />
-                  ))}
-            </div>
-            : <NoData />
-          }
+        {posts.length > 0 ? (
+          <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14">
+            {posts?.slice(0, 2).map((post) => (
+              <TopPost
+                key={post.id}
+                image={post.coverImage}
+                title={post.title}
+                content={post.content}
+                date={post.createdAt}
+                time={8}
+                height="250px"
+              />
+            ))}
+          </div>
+        ) : (
+          <NoData />
+        )}
       </section>
 
       <section>
@@ -43,7 +42,7 @@ export default function Blog({ posts }) {
                   key={post.id}
                   image={post.coverImage}
                   title={post.title}
-                  content={post.description}
+                  content={post.content}
                   date={post.createdAt}
                   time={8}
                   height="250px"
